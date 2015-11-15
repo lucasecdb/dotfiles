@@ -15,3 +15,10 @@ compinit
 
 alias la='ls -A'
 alias ll='ls -lA'
+
+# TST
+alias tck='tst_checkout.py'
+alias tcm='tst_commit.py'
+alias tl='tst_login.py'
+alias tt='tst_test.py'
+alias tv='tst_version.py'
