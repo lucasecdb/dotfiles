@@ -44,3 +44,6 @@ set laststatus=2
 
 " numbers.vim settings
 let g:numbers_exclude = ['nerdtree']
+
+" use system clipboard
+let clipboard=unnamed
