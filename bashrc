@@ -1,0 +1,76 @@
+#############################################
+##         BASH RUN COMMANDS FILE          ##
+##           LUCAS CORDEIRO (C)            ##
+##                 2015                    ##
+#############################################
+
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+#if [ -f `which powerline-daemon` ]; then
+#    powerline-daemon -q
+#    POWERLINE_BASH_CONTINUATION=1
+#    POWERLINE_BASH_SELECT=1
+#    . /usr/share/powerline/bash/powerline.sh
+#fi
+
+# initialize bash with tmux
+#if command -v tmux>/dev/null; then
+#	  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+#fi
+
+export PATH=$PATH:/home/lucas/tst
+
+#################
+##   ALIASES   ##
+#################
+
+alias grep='grep --colour=auto'
+alias la='ls -A'
+alias ll='ls -Al'
+alias ls='ls --color=auto'
+alias py='python'
+alias clear='echo "ctrl+l"'
+
+# Compilers and stuff
+alias cmpl=cmpl
+alias gpp=gpp
+alias server=webserver
+alias sdl=sdl
+
+# TST
+alias tck='tst_checkout.py'
+alias tcm='tst_commit.py'
+alias tl='tst_login.py'
+alias tt='tst_test.py'
+alias tv='tst_version.py'
+
+# CS50
+alias cs50="cd ~/Dropbox/CS50/"
+
+# custom functions
+cmpl() {
+    echo "gcc -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lm -o $1";
+    gcc -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lm -o $1;
+}
+
+gpp() {
+	echo "g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1";
+	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
+}
+
+sdl() {
+    echo "g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -lSDL2 -o $1";
+    g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -lSDL2 -o $1;
+}
+
+webserver() {
+    echo 'Starting apache webserver';
+    sudo service httpd start;
+    echo 'Starting MySQL database';
+    sudo service mariadb start;
+
+    echo '';
+    echo 'all ready :-)';
+}
