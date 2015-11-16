@@ -22,3 +22,5 @@ alias tcm='tst_commit.py'
 alias tl='tst_login.py'
 alias tt='tst_test.py'
 alias tv='tst_version.py'
+
+alias open='gnome-open'
