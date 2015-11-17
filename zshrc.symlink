@@ -23,4 +23,12 @@ alias tl='tst_login.py'
 alias tt='tst_test.py'
 alias tv='tst_version.py'
 
+# custom alias
 alias open='gnome-open'
+alias grep='grep --colour=auto'
+alias la='ls -A'
+alias ll='ls -Al'
+alias ls='ls --color=auto'
+alias py='python'
+alias clear='echo "ctrl+l"'
+alias cs50="cd ~/Dropbox/CS50/"
