@@ -25,6 +25,7 @@ noremap  <Right>  <NOP>
 set term=screen-256color
 let g:solarized_termcolors=256
 
+" pathogen
 execute pathogen#infect()
 
 " syntastic setup
@@ -32,8 +33,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -45,5 +44,5 @@ set laststatus=2
 " numbers.vim settings
 let g:numbers_exclude = ['nerdtree']
 
-" use system clipboard
+" use system clipboard by default
 set clipboard=unnamed
