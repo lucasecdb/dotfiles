@@ -45,4 +45,4 @@ set laststatus=2
 let g:numbers_exclude = ['nerdtree']
 
 " use system clipboard by default
-set clipboard=unnamed
+set clipboard=unnamedplus
