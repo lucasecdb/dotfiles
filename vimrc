@@ -9,8 +9,11 @@ set number
 " alias the NERDTree command to nt
 command Nt NERDTree
 
-color colorsbox-stnight
-set background=dark
+" color scheme
+color buddy
+"set background=dark
+let g:badwolf_tabline = 0
+let g:badwolf_css_props_highlight = 1
 
 " removes functionality of arrow keys
 inoremap <Up>     <NOP>
