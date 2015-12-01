@@ -11,7 +11,7 @@ command Nt NERDTree
 
 " color scheme
 color buddy
-"set background=dark
+
 let g:badwolf_tabline = 0
 let g:badwolf_css_props_highlight = 1
 
@@ -49,3 +49,6 @@ let g:numbers_exclude = ['nerdtree']
 
 " use system clipboard by default
 set clipboard=unnamedplus
+
+" keep at least 5 lines bellow the cursor
+set scrolloff=3
