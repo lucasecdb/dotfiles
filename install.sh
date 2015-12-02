@@ -1,6 +1,7 @@
 #!/usr/bin/zsh
 
 if [ $(pwd) != /home/$USER/.dotfiles ]; then
+	mkdir -p ~/.dotfiles
 	cd
 	cd .dotfiles
 fi
@@ -18,3 +19,9 @@ ln -s zshrc ~/.zshrc
 
 # bashrc
 ln -s bashrc ~/.bashrc
+
+# i3
+ln -s i3 ~/.i3
+
+# fonts
+ln -s fonts ~/.fonts
