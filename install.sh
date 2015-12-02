@@ -17,7 +17,7 @@ if [[ -f ~/.vimrc ]]; then
 fi
 
 echo 'Creating symlink for vimrc'
-ln -s vim/vimrc ~/.vimrc
+ln -s ./vim/vimrc ~/.vimrc
 
 # tmux.conf
 if [[ -f ~/.tmux.conf ]]; then
@@ -28,7 +28,7 @@ if [[ -f ~/.tmux.conf ]]; then
 fi
 
 echo 'Creating symlink for tmux.conf'
-ln -s tmux/tmux.conf ~/.tmux.conf
+ln -s ./tmux/tmux.conf ~/.tmux.conf
 
 # zshrc
 if [[ -f ~/.zshrc ]]; then
@@ -39,7 +39,7 @@ if [[ -f ~/.zshrc ]]; then
 fi
 
 echo 'Creating symlink for zshrc'
-ln -s zsh/zshrc ~/.zshrc
+ln -s ./zsh/zshrc ~/.zshrc
 
 # bashrc
 if [[ -f ~/.bashrc ]]; then
@@ -50,7 +50,7 @@ if [[ -f ~/.bashrc ]]; then
 fi
 
 echo 'Creating symlink for bashrc'
-ln -s bash/bashrc ~/.bashrc
+ln -s ./bash/bashrc ~/.bashrc
 
 # i3
 if [[ -f ~/.i3 ]]; then
@@ -61,7 +61,7 @@ if [[ -f ~/.i3 ]]; then
 fi
 
 echo 'Creating symlink for i3'
-ln -s i3 ~/.i3
+ln -s ./i3 ~/.i3
 
 # fonts
 if [[ -f ~/.fonts ]]; then
@@ -72,4 +72,4 @@ if [[ -f ~/.fonts ]]; then
 fi
 
 echo 'Creating symlink for fonts'
-ln -s fonts ~/.fonts
+ln -s ./fonts ~/.fonts
