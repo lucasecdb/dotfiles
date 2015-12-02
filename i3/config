@@ -171,3 +171,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# wallpaper
+exec_always --no-startup-id nitrogen --restore
