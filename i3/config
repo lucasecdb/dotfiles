@@ -190,7 +190,7 @@ bindsym $mod+shift+x exec ~/.dotfiles/bin/lock.sh
 exec_always --no-startup-id nitrogen --restore
 
 # compton for transparency
-exec compton
+exec compton -f
 
 # sound and volume settings
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
