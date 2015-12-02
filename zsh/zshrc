@@ -1,5 +1,5 @@
 export PATH=$PATH:/home/$USER/.dotfiles/bin
-source $HOME/.dotfiles/zshrc.aux
+source $HOME/.dotfiles/zsh/zshrc.aux
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
