@@ -184,7 +184,7 @@ bar {
 }
 
 # lock
-bindsym $mod+shift+x exec lock.sh
+bindsym $mod+shift+x exec ~/.dotfiles/bin/lock.sh
 
 # wallpaper
 exec_always --no-startup-id nitrogen --restore
