@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # rofi
-bindsym $mod+d exec rofi -show run -bg "$bg-color" -bc "$bg-color" -bw 0 -fg "$inactive-text-color" -hlfg "$text-color" -hlbg "$bg-color" -font "Noto Sans 17" -opacity "85" -width 100 -padding 450
+bindsym $mod+d exec rofi -show run -bg "$bg-color" -bc "$bg-color" -bw 0 -fg "#ababab" -hlfg "#ffffff" -hlbg "$bg-color" -font "Noto Sans 17" -opacity "85" -width 100 -padding 450
 
 # change focus
 bindsym $mod+j focus left
@@ -191,7 +191,7 @@ bar {
 
 	position top
 	font pango:Sauce Code Powerline Regular, FontAwesome 10
-	status_command i3blocks -c ~/.dotfiles/i3/i3blocks.conf
+	status_command i3blocks -c ~/.i3/i3blocks.conf
 
 	colors {
 		background $bg-color
