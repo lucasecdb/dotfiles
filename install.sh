@@ -9,16 +9,16 @@ fi
 # make symbolic links
 
 # vimrc
-ln -s vimrc ~/vim/.vimrc
+ln -s vim/vimrc ~/.vimrc
 
 # tmux.conf
-ln -s tmux.conf ~/tmux/.tmux.conf
+ln -s tmux/tmux.conf ~/.tmux.conf
 
 # zshrc
-ln -s zshrc ~/zsh/.zshrc
+ln -s zsh/zshrc ~/.zshrc
 
 # bashrc
-ln -s bashrc ~/.bashrc
+ln -s bash/bashrc ~/.bashrc
 
 # i3
 ln -s i3 ~/.i3
