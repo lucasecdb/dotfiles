@@ -1,3 +1,4 @@
+export PATH=$PATH:/home/$USER/.dotfiles/bin
 source $HOME/.dotfiles/zshrc.aux
 
 # Lines configured by zsh-newuser-install
