@@ -26,7 +26,7 @@ alias tt='tst_test.py'
 alias tv='tst_version.py'
 
 # custom alias
-alias open='gnome-open'
+# alias open='gnome-open'
 alias grep='grep --colour=auto'
 alias la='ls -A'
 alias ll='ls -Al'
