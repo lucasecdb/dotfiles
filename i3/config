@@ -183,8 +183,9 @@ bar {
 	status_command i3status
 }
 
-# lock
+# lock and autolock
 bindsym $mod+shift+x exec ~/.dotfiles/bin/lock.sh
+exec --no-startup-id xautolock -time 15 -locker ~/.dotfiles/bin/lock.sh &
 
 # wallpaper
 exec_always --no-startup-id nitrogen --restore
