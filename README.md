@@ -1,4 +1,3 @@
 # dotfiles
 
-## Overview
-Dotfiles I use for my daily applications
+Pretty self explanatory, just my dotfiles I use for my WM and daily applications.
