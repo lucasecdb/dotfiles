@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # rofi
-bindsym $mod+d exec rofi -show run -bg "$bg-color" -bc "$bg-color" -bw 0 -fg "#ababab" -hlfg "#ffffff" -hlbg "$bg-color" -font "Noto Sans 17" -opacity "85" -width 100 -padding 450
+bindsym $mod+d exec rofi -show run -lines 3 -bg "$bg-color" -bc "$bg-color" -bw 0 -fg "#ababab" -hlfg "#ffffff" -hlbg "$bg-color" -font "Noto Sans 17" -opacity "85" -width 100 -padding 480
 
 # change focus
 bindsym $mod+j focus left
