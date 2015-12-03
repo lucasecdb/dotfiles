@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/sh
 
 if [ $(pwd) != /home/$USER/.dotfiles ]; then
 	mkdir -p ~/.dotfiles
@@ -60,8 +60,21 @@ ln -s /home/$USER/.dotfiles/bash/bashrc ~/.bashrc
 
 echo ''
 
-# cd to home directory
+# Xresources
 
+if [[ -f ~/.Xresources ]]; then
+	echo 'Backing up ~/.Xresources'
+
+	cp ~/.Xresources ~/.Xresources.orig
+	rm ~/.Xresources
+fi
+
+echo 'Creating symlink for Xresources'
+ln -s ~/.dotfiles/Xresources ~/.Xresources
+
+echo ''
+
+# cd to home directory
 cd
 
 # i3
