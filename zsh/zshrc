@@ -5,8 +5,8 @@ source $HOME/.dotfiles/zsh/zshrc.aux
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt beep nomatch notify
-unsetopt appendhistory autocd extendedglob
+setopt beep nomatch notify autocd
+unsetopt appendhistory extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
