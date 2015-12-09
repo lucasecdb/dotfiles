@@ -188,8 +188,8 @@ bindsym $mod+r mode "resize"
 # gaps config
 for_window [class="^.*"] border pixel 0
 
-gaps inner 10
-gaps outer 25
+gaps inner 20
+gaps outer 20
 
 # colors
 set $text-color          #f3f4f5
