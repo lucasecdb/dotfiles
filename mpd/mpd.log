@@ -231,3 +231,14 @@ Dec 10 17:48 : alsa_mixer: Failed to read mixer for 'alsa mixer': no such mixer 
 Dec 10 17:48 : client: [0] closed
 Dec 10 17:54 : client: [1] opened from 127.0.0.1:39766
 Dec 10 17:55 : client: [1] closed
+Dec 10 18:06 : client: [0] opened from 127.0.0.1:39866
+Dec 10 18:06 : alsa_mixer: Failed to read mixer for 'alsa mixer': no such mixer control: PCM
+Dec 10 18:06 : output: Failed to open mixer for 'alsa mixer'
+Dec 10 18:07 : player: played "Muse/Absolution/01 Intro.m4a"
+Dec 10 18:07 : output: Failed to open mixer for 'alsa mixer'
+Dec 10 18:08 : player: played "Muse/Absolution/01 Intro.m4a"
+Dec 10 18:09 : client: [0] closed
+Dec 10 18:09 : client: [1] opened from 127.0.0.1:39872
+Dec 10 18:09 : output: Failed to open mixer for 'alsa mixer'
+Dec 10 18:10 : client: [1] closed
+Dec 10 18:10 : player: played "Muse/Absolution/02 Apocalypse Please.m4a"
