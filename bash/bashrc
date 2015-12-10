@@ -20,7 +20,7 @@ fi
 #	  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 #fi
 
-export PATH=$PATH:/home/lucas/tst
+export PATH=$PATH:/home/$USER/tst:/home/$USER/.dotfiles/bin
 
 #################
 ##   ALIASES   ##
