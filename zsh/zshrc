@@ -1,4 +1,6 @@
+# environment variables and source files
 export PATH=$PATH:/home/$USER/.dotfiles/bin
+export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
 source $HOME/.dotfiles/zsh/zshrc.aux
 
 # Lines configured by zsh-newuser-install
