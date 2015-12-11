@@ -4,3 +4,4 @@
 # log and pid files (mpd files)
 *.log
 *.pid
+mpdstate
