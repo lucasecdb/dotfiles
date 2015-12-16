@@ -1,112 +1,78 @@
 #!/usr/bin/sh
 
-if [ $(pwd) != /home/$USER/.dotfiles ]; then
-	mkdir -p ~/.dotfiles
-	cd
-	cd .dotfiles
-fi
+function link_file {
+	if [ -v $2 ]; then
+		if [[ -f ~/.$1.$2 ]]; then
+			echo Backing up ~/.$1.$2
 
-# make symbolic links
+			cp ~/.$1.$2 ~/.$1.$2.orig
+			rm ~/.$1.$2
+		fi
+	else
+		if [[ -f ~/.$1 ]]; then
+			echo Backing up ~/.$1
+
+			cp ~/.$1 ~/.$1.orig
+			rm ~/.$1
+		fi
+	fi
+
+	echo Creating symlink for $1
+
+	if [ $1 = 'vimrc' ]; then
+		dir=vim
+	elif [ $1 = 'bashrc' ]; then
+		dir=bash
+	elif [ $1 = 'zshrc' ]; then
+		dir=zsh
+	elif [ $1 = 'tmux' ]; then
+		dir=tmux
+	elif [ $1 = 'Xresources']; then
+		dir=.
+	fi
+
+	if [ -v $2 ]; then
+		ln -s ~/.dotfiles/$dir/$1.$2 ~/.$1.$2
+	else
+		ln -s ~/.dotfiles/$dir/$1 ~/.$1
+	fi
+
+	echo
+}
+
+function link_dir {
+	if [[ -f ~/.$1 ]]; then
+		echo Backing up ~/.$1
+
+		cp ~/.$1 ~/.$1.orig
+		rm ~/.$1
+	fi
+
+	echo Creating symlink for $1
+	ln -s ~/.dotfiles/$1 ~/.$1
+
+	echo
+}
+
+## make symbolic links
 
 # vimrc
-if [[ -f ~/.vimrc ]]; then
-	echo 'Backing up ~/.vimrc'
-
-	cp ~/.vimrc ~/.vimrc.orig
-	rm ~/.vimrc
-fi
-
-echo 'Creating symlink for vimrc'
-ln -s /home/$USER/.dotfiles/vim/vimrc ~/.vimrc
-
-echo ''
+link_file vimrc
 
 # tmux.conf
-if [[ -f ~/.tmux.conf ]]; then
-	echo 'Backing up ~/.tmux.conf'
-
-	cp ~/.tmux.conf ~/.tmux.conf.orig
-	rm ~/.tmux.conf
-fi
-
-echo 'Creating symlink for tmux.conf'
-ln -s /home/$USER/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-
-echo ''
+link_file tmux conf
 
 # zshrc
-if [[ -f ~/.zshrc ]]; then
-	echo 'Backing up ~/.zshrc'
-
-	cp ~/.zshrc ~/.zshrc.orig
-	rm ~/.zshrc
-fi
-
-echo 'Creating symlink for zshrc'
-ln -s /home/$USER/.dotfiles/zsh/zshrc ~/.zshrc
-
-echo ''
+link_file zshrc
 
 # bashrc
-if [[ -f ~/.bashrc ]]; then
-	echo 'Backing up ~/.bashrc'
-
-	cp ~/.bashrc ~/.bashrc.orig
-	rm ~/.bashrc
-fi
-
-echo 'Creating symlink for bashrc'
-ln -s /home/$USER/.dotfiles/bash/bashrc ~/.bashrc
-
-echo ''
+link_file bashrc
 
 # Xresources
-
-if [[ -f ~/.Xresources ]]; then
-	echo 'Backing up ~/.Xresources'
-
-	cp ~/.Xresources ~/.Xresources.orig
-	rm ~/.Xresources
-fi
-
-echo 'Creating symlink for Xresources'
-ln -s ~/.dotfiles/Xresources ~/.Xresources
-
-echo ''
-
-# cd to home directory
-cd
+link_file Xresources
 
 # i3
-if [[ -f .i3 ]]; then
-	echo 'Backing up ~/.i3.conf'
-
-	cp .i3 .i3.orig
-	rm .i3
-fi
-
-echo 'Creating symlink for i3'
-ln -s /home/$USER/.dotfiles/i3 /home/$USER/.i3
-
-if [[ -f .dotfiles/i3/i3/config ]]; then
-	echo 'Cleaning up extra files'
-	rm .dotfiles/i3/i3
-fi
-
-echo ''
+link_dir i3
 
 # fonts
-if [[ -f .fonts ]]; then
-	echo 'Backing up ~/.fonts'
-
-	cp .fonts .fonts.orig
-	rm .fonts
-fi
-
-echo 'Creating symlink for fonts'
-ln -s /home/$USER/.dotfiles/fonts /home/$USER/.fonts
-
-if [[ -f .dotfiles/fonts/fonts/Hack-Regular.ttf ]]; then
-	echo 'Cleaning up extra files'
-	rm .dotfiles/fonts/fonts
-fi
+link_dir fonts
