@@ -57,8 +57,8 @@ function link_dir {
 ## make symbolic links
 
 # vim and vimrc
-link_file vimrc
 link_dir  vim
+link_file vimrc
 
 # tmux.conf
 link_file tmux conf
