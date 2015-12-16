@@ -56,8 +56,9 @@ function link_dir {
 
 ## make symbolic links
 
-# vimrc
+# vim and vimrc
 link_file vimrc
+link_dir  vim
 
 # tmux.conf
 link_file tmux conf
@@ -73,6 +74,10 @@ link_file Xresources
 
 # i3
 link_dir i3
+
+# mpd and ncmpcpp
+link_dir mpd
+link_dir ncmpcpp
 
 # fonts
 link_dir fonts
