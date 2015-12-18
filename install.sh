@@ -1,7 +1,7 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 function link_file {
-	if [ -v $2 ]; then
+	if [ !$2 = '' ]; then
 		if [[ -f ~/.$1.$2 ]]; then
 			echo Backing up ~/.$1.$2
 
@@ -19,19 +19,19 @@ function link_file {
 
 	echo Creating symlink for $1
 
-	if [ $1 = 'vimrc' ]; then
+	if [ $1 = vimrc ]; then
 		dir=vim
-	elif [ $1 = 'bashrc' ]; then
+	elif [ $1 = bashrc ]; then
 		dir=bash
-	elif [ $1 = 'zshrc' ]; then
+	elif [ $1 = zshrc ]; then
 		dir=zsh
-	elif [ $1 = 'tmux' ]; then
+	elif [ $1 = tmux ]; then
 		dir=tmux
-	elif [ $1 = 'Xresources']; then
+	elif [ $1 = Xresources]; then
 		dir=.
 	fi
 
-	if [ -v $2 ]; then
+	if [ $1 = tmux ]; then
 		ln -s ~/.dotfiles/$dir/$1.$2 ~/.$1.$2
 	else
 		ln -s ~/.dotfiles/$dir/$1 ~/.$1
