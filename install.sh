@@ -1,20 +1,11 @@
 #!/bin/bash
 
 function link_file {
-	if [[ !$2 = '' ]]; then
-		if [[ -f ~/.$1.$2 || -h ~/.$1.$2 ]]; then
-			echo Backing up ~/.$1.$2
+	if [[ -f ~/.$1 || -h ~/.$1 ]]; then
+		echo Backing up ~/.$1
 
-			cp ~/.$1.$2 ~/.$1.$2.orig
-			rm ~/.$1.$2
-		fi
-	else
-		if [[ -f ~/.$1 || -h ~/.$1 ]]; then
-			echo Backing up ~/.$1
-
-			cp ~/.$1 ~/.$1.orig
-			rm ~/.$1
-		fi
+		cp ~/.$1 ~/.$1.orig
+		rm ~/.$1
 	fi
 
 	echo Creating symlink for $1
@@ -25,23 +16,19 @@ function link_file {
 		dir=bash
 	elif [ $1 = zshrc ]; then
 		dir=zsh
-	elif [ $1 = tmux ]; then
+	elif [ $1 = tmux.conf -o $1 = tmux ]; then
 		dir=tmux
 	else
 		dir=.
 	fi
 
-	if [ $1 = tmux ]; then
-		ln -s ~/.dotfiles/$dir/$1.$2 ~/.$1.$2
-	else
-		ln -s ~/.dotfiles/$dir/$1 ~/.$1
-	fi
+	ln -s ~/.dotfiles/$dir/$1 ~/.$1
 
 	echo
 }
 
 function link_dir {
-	if [[ -f ~/.$1 ]]; then
+	if [[ -f ~/.$1 || -h ~/.$1 ]]; then
 		echo Backing up ~/.$1
 
 		cp ~/.$1 ~/.$1.orig
@@ -61,7 +48,7 @@ link_dir  vim
 link_file vimrc
 
 # tmux.conf
-link_file tmux conf
+link_file tmux.conf
 
 # zshrc
 link_file zshrc
