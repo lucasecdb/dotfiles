@@ -1,15 +1,15 @@
 #!/bin/bash
 
 function link_file {
-	if [ !$2 = '' ]; then
-		if [[ -f ~/.$1.$2 ]]; then
+	if [[ !$2 = '' ]]; then
+		if [[ -f ~/.$1.$2 || -h ~/.$1.$2 ]]; then
 			echo Backing up ~/.$1.$2
 
 			cp ~/.$1.$2 ~/.$1.$2.orig
 			rm ~/.$1.$2
 		fi
 	else
-		if [[ -f ~/.$1 ]]; then
+		if [[ -f ~/.$1 || -h ~/.$1 ]]; then
 			echo Backing up ~/.$1
 
 			cp ~/.$1 ~/.$1.orig
@@ -27,7 +27,7 @@ function link_file {
 		dir=zsh
 	elif [ $1 = tmux ]; then
 		dir=tmux
-	elif [ $1 = Xresources]; then
+	else
 		dir=.
 	fi
 
