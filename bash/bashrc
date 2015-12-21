@@ -8,6 +8,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+if [ -f ~/.bashrc.orig ]; then
+	. ~/.bashrc.orig
+fi
+
 #if [ -f `which powerline-daemon` ]; then
 #    powerline-daemon -q
 #    POWERLINE_BASH_CONTINUATION=1
