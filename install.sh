@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function link_file {
+link_file() {
 	if [[ -f ~/.$1 || -h ~/.$1 ]]; then
 		echo Backing up ~/.$1
 
@@ -23,11 +23,9 @@ function link_file {
 	fi
 
 	ln -s ~/.dotfiles/$dir/$1 ~/.$1
-
-	echo
 }
 
-function link_dir {
+link_dir() {
 	if [[ -f ~/.$1 || -h ~/.$1 ]]; then
 		echo Backing up ~/.$1
 
@@ -36,9 +34,8 @@ function link_dir {
 	fi
 
 	echo Creating symlink for $1
-	ln -s ~/.dotfiles/$1 ~/.$1
 
-	echo
+	ln -s ~/.dotfiles/$1 ~/.$1
 }
 
 ## make symbolic links
