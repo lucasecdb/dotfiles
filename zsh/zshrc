@@ -1,7 +1,10 @@
 # environment variables and source files
 export PATH=$PATH:/home/$USER/.dotfiles/bin
 export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
+
+# oh-my-zsh rc file and theme file
 source $HOME/.dotfiles/zsh/zshrc.aux
+source $HOME/.dotfiles/zsh/theme.zsh-theme
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
