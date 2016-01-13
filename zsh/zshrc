@@ -22,15 +22,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-alias la='ls -A'
-alias ll='ls -lA'
-
-# custom alias
-# alias open='gnome-open'
+# Custom alias
+#alias open='gnome-open'
 alias grep='grep --colour=auto'
 alias la='ls -A'
 alias ll='ls -Al'
 alias ls='ls --color=auto'
 alias py='python'
+alias pyc="rm *.pyc"
 alias clear='echo "ctrl+l"'
 alias cs50="cd ~/Dropbox/CS50/"

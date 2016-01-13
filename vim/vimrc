@@ -50,5 +50,5 @@ let g:numbers_exclude = ['nerdtree']
 " use system clipboard by default
 set clipboard=unnamedplus
 
-" keep at least 5 lines bellow the cursor
+" keep at least 3 lines bellow the cursor
 set scrolloff=3
