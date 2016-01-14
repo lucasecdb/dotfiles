@@ -13,21 +13,17 @@ if [ "$1" = start ]; then
 	echo Starting services...
 
 	net_service start
-	echo Finished
-
 elif [ "$1" = stop ]; then
 	echo Stopping services...
 
 	net_service stop
-	echo Finished
-
 elif [ "$1" = restart ]; then
 	echo Restarting services...
 
 	net_service restart
-	echo Finished
-
 else
 	usage
 	exit
 fi
+
+echo Finished
