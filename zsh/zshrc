@@ -1,9 +1,5 @@
 # environment variables and source files
-if [ $USER = 'root' ]; then
-	export PATH=$PATH:/$USER/.dotfiles/bin
-else
-	export PATH=$PATH:/home/$USER/.dotfiles/bin
-fi
+export PATH=$PATH:$HOME/.dotfiles/bin
 
 export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
 export GIT_EDITOR=vim
