@@ -52,6 +52,7 @@ link_dir() {
 }
 
 ## make symbolic links
+echo \nStarting installation of dotfiles\n
 
 # vim and vimrc
 link_dir  vim
@@ -81,3 +82,5 @@ link_dir ncmpcpp
 
 # fonts
 link_dir fonts
+
+echo Finished installing dotfiles
