@@ -26,9 +26,9 @@ compinit
 # Custom alias
 #alias open='gnome-open'
 alias grep='grep --colour=auto'
-alias la='ls -A'
-alias ll='ls -Al'
-alias ls='ls --color=auto'
+alias la='ls -A --group-directories-first'
+alias ll='ls -Al --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
 alias py='python'
 alias pyc="rm *.pyc"
 alias clear='echo "ctrl+l"'
