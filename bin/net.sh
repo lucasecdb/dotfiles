@@ -23,7 +23,7 @@ elif [ "$1" = restart ]; then
 	net_service restart
 else
 	usage
-	exit
+	exit 1
 fi
 
 echo Finished
