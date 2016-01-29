@@ -1,0 +1,157 @@
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+	font-family: SFNS Display, Arial;
+	color: #888;
+}
+
+body
+{
+	background-color: #ffffff;
+}
+
+.header-wrapper
+{
+	width: 800px;
+	height: 250px;
+	margin: 40px auto 0px;
+	padding: 0 auto;
+}
+
+.header-wrapper > .header
+{
+	height: 150px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.header-wrapper > form
+{
+	height: 100px;
+	text-align: center;
+}
+
+.header-wrapper > form > .text
+{
+	border: 1px solid lightgrey;
+	border-radius: 0px;
+	width: 400px;
+	height: 35px;
+	padding: 2px 7px;
+	color: #222222;
+}
+
+.header-wrapper > form > .text:hover
+{
+	border: 1px solid #757575;
+}
+
+.header-wrapper > form > .text:focus
+{
+	border: 1px solid #0099ff;
+}
+
+.header-wrapper > form > .btn
+{
+	background-color: #f0f0f0;
+	border: 1px solid #f0f0f0;
+	border-radius: 0px;
+	width: 100px;
+	height: 35px;
+	color: #757575;
+}
+
+.header-wrapper > form > .btn:hover
+{
+	border: 1px solid lightgrey;
+	color: #000;
+}
+
+.header-wrapper > form > .btn > .fa-search
+{
+	font-size: 0.9em;
+}
+
+.light-bar
+{
+	height: 1px;
+	width: 90%;
+	margin: 0 auto;
+	background-color: lightgrey;
+}
+
+.content-wrapper
+{
+	width: 1600px;
+	margin: 0 auto;
+}
+
+.content-wrapper > .content-block
+{
+	height: 600px;
+	width: auto;
+	list-style: none;
+}
+
+.content-wrapper > .content-block > .content
+{
+	display: inline-block;
+	height: 85%;
+	width: 400px;
+	padding-top: 15px;
+	margin: 30px 50px;
+	border: 1px solid lightgrey;
+	border-radius: 7px;
+	vertical-align: top;
+}
+
+.content-wrapper > .content-block > .content > .content-img
+{
+	text-align: center;
+	/*width: 100px;
+	margin: 0 auto;*/
+	font-size: 6em;
+}
+
+/* twitter */
+.content-wrapper > .content-block > .content:first-child:hover > .content-img > .fa
+{
+	color: #00aced;
+}
+
+/* github */
+.content-wrapper > .content-block > .content:nth-child(2):hover > .content-img > .fa
+{
+	color: #220022;
+}
+
+/* linux */
+.content-wrapper > .content-block > .content:last-child:hover > .content-img > .fa
+{
+	color: black;
+}
+
+.content-wrapper > .content-block > .content > .content-list
+{
+	width: 80%;
+	margin: 30px auto 0;
+	padding: 0;
+	list-style: none;
+}
+
+.content-wrapper > .content-block > .content > .content-list > .content-website
+{
+	margin: 15px 0;
+}
+
+.content-wrapper > .content-block > .content > .content-list > .content-website > a
+{
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.content-wrapper > .content-block > .content > .content-list > .content-website > a:hover
+{
+	color: black;
+}
