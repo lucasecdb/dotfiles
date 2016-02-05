@@ -1,5 +1,5 @@
 # environment variables and source files
-export PATH=$PATH:$HOME/.dotfiles/bin
+export PATH=$PATH:$HOME/.dotfiles/bin:$HOME/.android-studio/bin
 
 export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
 export GIT_EDITOR=vim
