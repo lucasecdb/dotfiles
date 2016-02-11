@@ -57,7 +57,7 @@ hi Statement ctermfg=222 ctermbg=NONE cterm=NONE guifg=#c57825 guibg=NONE gui=NO
 hi StorageClass ctermfg=172 ctermbg=NONE cterm=NONE guifg=#c57825 guibg=NONE gui=bold
 hi String ctermfg=71 ctermbg=NONE cterm=NONE guifg=#5e8759 guibg=NONE gui=NONE
 hi Tag ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#a9b7c6 guibg=NONE gui=bold
+hi Title ctermfg=231 ctermbg=NONE cterm=NONE guifg=#a9b7c6 guibg=NONE gui=NONE
 hi Todo ctermfg=015 ctermbg=NONE cterm=bold guifg=#b1c73d guibg=NONE gui=bold,italic
 hi Type ctermfg=172 ctermbg=NONE cterm=NONE guifg=#c57825 guibg=NONE gui=NONE
 hi Underlined ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
@@ -91,11 +91,11 @@ hi erubyComment ctermfg=244 ctermbg=NONE cterm=NONE guifg=#8e9292 guibg=NONE gui
 hi erubyRailsMethod ctermfg=59 ctermbg=NONE cterm=bold guifg=#3c4c72 guibg=NONE gui=bold
 
 " HTML
-hi htmlTag ctermfg=172 ctermbg=NONE cterm=NONE guifg=#d9c767 guibg=NONE gui=NONE
-hi htmlEndTag ctermfg=172 ctermbg=NONE cterm=NONE guifg=#d9c767 guibg=NONE gui=NONE
-hi htmlTagName ctermfg=172 ctermbg=NONE cterm=bold guifg=#d9c767 guibg=NONE gui=bold
-hi htmlString ctermfg=071 ctermbg=NONE cterm=NONE guifg=#8dc35b guibg=NONE gui=NONE
-hi htmlArg ctermfg=222 ctermbg=NONE cterm=NONE guifg=#a9b7c6 guibg=NONE gui=NONE
+hi htmlTag ctermfg=221 ctermbg=NONE cterm=NONE guifg=#d9c767 guibg=NONE gui=NONE
+hi htmlTagName ctermfg=221 ctermbg=NONE cterm=NONE guifg=#d9c767 guibg=NONE gui=NONE
+hi htmlEndTag ctermfg=221 ctermbg=NONE cterm=NONE guifg=#d9c767 guibg=NONE gui=NONE
+hi htmlString ctermfg=192 ctermbg=NONE cterm=NONE guifg=#8dc35b guibg=NONE gui=NONE
+hi htmlArg ctermfg=188 ctermbg=NONE cterm=NONE guifg=#bababa guibg=NONE gui=NONE
 hi htmlSpecialChar ctermfg=103 ctermbg=NONE cterm=italic guifg=#67609c guibg=NONE gui=italic
 
 " JS
