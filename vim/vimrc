@@ -5,6 +5,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set number
+set backspace=indent,eol,start
+syntax on
 
 " alias the NERDTree command to nt
 command Nt NERDTree
@@ -35,6 +37,7 @@ set statusline+=%*
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_java_checkers = ['javac']
 
 " airline setup
 let g:airline_powerline_fonts = 1
