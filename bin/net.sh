@@ -5,15 +5,15 @@ usage() {
 }
 
 net_service() {
-	service networking $1
-	service network-manager $1
+	service networking $1 2> /dev/null
+	service network-manager $1 2> /dev/null
 }
 
-if [ "$1" = start ]; then
+if [[ "$1" = start || "$1" = up ]]; then
 	echo Starting services...
 
 	net_service start
-elif [ "$1" = stop ]; then
+elif [[ "$1" = stop || "$1" = down ]]; then
 	echo Stopping services...
 
 	net_service stop
@@ -26,4 +26,8 @@ else
 	exit 1
 fi
 
-echo Finished
+if [ "$?" = 0 ]; then
+	echo Finished
+else
+	echo Failed
+fi
