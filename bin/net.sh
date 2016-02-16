@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-	echo "Usage: ./net.sh <start|stop|restart>"
+	echo "Usage: ./net.sh <start|up|stop|down|restart>"
 }
 
 net_service() {
