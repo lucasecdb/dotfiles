@@ -10,13 +10,13 @@ link_file() {
 
 	echo Creating symlink for $1
 
-	if [ $1 = vimrc ]; then
+	if [ "$1" = vimrc ]; then
 		dir=vim
-	elif [ $1 = bashrc ]; then
+	elif [ "$1" = bashrc ]; then
 		dir=bash
-	elif [ $1 = zshrc ]; then
+	elif [ "$1" = zshrc ]; then
 		dir=zsh
-	elif [ $1 = tmux.conf -o $1 = tmux ]; then
+	elif [ "$1" = tmux.conf -o "$1" = tmux ]; then
 		dir=tmux
 	else
 		dir=.
@@ -26,7 +26,7 @@ link_file() {
 }
 
 link_dir() {
-	if [ $1 = openbox ]; then
+	if [ "$1" = openbox ]; then
 		if [[ -f ~/.config/$1 || -h ~/.config/$1 ]]; then
 			echo Backing up ~/.config/$1
 
@@ -44,7 +44,7 @@ link_dir() {
 
 	echo Creating symlink for $1
 
-	if [ $1 = openbox ]; then
+	if [ "$1" = openbox ]; then
 		ln -s ~/.dotfiles/config/$1 ~/.config/$1
 	else
 		ln -s ~/.dotfiles/$1 ~/.$1
