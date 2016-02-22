@@ -8,7 +8,12 @@ To install my dotfiles in a Linux machine just type these commands on a terminal
 
 ```shell
 $ # install zsh
-$ sudo apt-get|dnf|yum install zsh
+$ # for ubuntu
+$ sudo apt-get install zsh
+$ # for fedora and similar
+$ sudo dnf install zsh
+$ # for arch
+$ sudo pacman -S zsh
 $
 $ # install oh-my-zsh
 $ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
