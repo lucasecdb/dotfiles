@@ -7,26 +7,26 @@
 *color0: #191919
 *color8: #484848
 !red
-*color1: #EB3D51
-*color9: #BE6262
+*color1: #eb3d51
+*color9: #be6262
 !green
-*color2:  #66B61A
-*color10: #4B8A10
+*color2:  #66b61a
+*color10: #4b8a10
 !yellow
-*color3:  #D98E1D
-*color11: #E5D95E
+*color3:  #d98e1d
+*color11: #e5d95e
 !blue
-*color4:  #23FFA8
-*color12: #23AAFF
+*color4:  #3465a4
+*color12: #23aaff
 !magenta
-*color5:  #FF00DA
-*color13: #AB005B
+*color5:  #ff00da
+*color13: #ab005b
 !cyan
-*color6:  #68A783
-*color14: #BBCD81
+*color6:  #68a783
+*color14: #bbcd81
 !white
-*color7:  #EAEAEA
-*color15: #BBBBBB
+*color7:  #eaeaea
+*color15: #bbbbbb
 
 ! xterm font
 xterm*font:     *-fixed-*-*-*-18-*
