@@ -30,6 +30,5 @@
 
 ! xterm font
 xterm*font:     *-fixed-*-*-*-18-*
-Xterm*.font: xtf:Source\ Code\ Pro\ for\ Powerline:Regular:size=11
-URxvt*.font: xtf:Source\ Code\ Pro\ for\ Powerline:Regular:size=11
-!*faceSize: 11
+*faceName: Source Code Pro for Powerline
+*faceSize: 11
