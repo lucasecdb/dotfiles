@@ -24,8 +24,8 @@ noremap  <Down>   <NOP>
 noremap  <Left>   <NOP>
 noremap  <Right>  <NOP>
 
+" misc
 set term=xterm-256color
-let g:solarized_termcolors=256
 
 " pathogen
 execute pathogen#infect()
