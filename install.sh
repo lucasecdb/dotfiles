@@ -22,7 +22,11 @@ link_file() {
 		dir=.
 	fi
 
-	ln -s ~/.dotfiles/$dir/$1 ~/.$1
+	ln -s ~/.dotfiles/$dir/$1 ~/.$1 2> /dev/null
+
+	if [ !"$?" = 0 ]; then
+		echo Failed to create symlink for $1
+	fi
 }
 
 link_dir() {
@@ -45,9 +49,13 @@ link_dir() {
 	echo Creating symlink for $1
 
 	if [ "$1" = openbox ]; then
-		ln -s ~/.dotfiles/config/$1 ~/.config/$1
+		ln -s ~/.dotfiles/config/$1 ~/.config/$1 2> /dev/null
 	else
-		ln -s ~/.dotfiles/$1 ~/.$1
+		ln -s ~/.dotfiles/$1 ~/.$1 2> /dev/null
+	fi
+
+	if [ !"$?" = 0 ]; then
+		echo Failed to create symlink for $1
 	fi
 }
 
@@ -69,6 +77,7 @@ link_file bashrc
 
 # Xresources
 link_file Xresources
+xrdb ~/.Xresources
 
 # i3
 link_dir i3
