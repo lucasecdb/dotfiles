@@ -10,7 +10,10 @@ restore() {
 	else
 		echo Didn\'t found a backup.. attempting to remove symlink
 		if [[ -L ~/.$1 ]]; then
+			echo Found symlink!
 			rm ~/.$1
+		else
+			echo Didn\'t found symlink :\(
 		fi
 	fi
 }
