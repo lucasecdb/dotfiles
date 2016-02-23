@@ -54,4 +54,4 @@ restore ncmpcpp
 # fonts
 restore fonts
 
-echo "Ended restore session, we\'ll miss you"
+echo "Ended restore session, we'll miss you"
