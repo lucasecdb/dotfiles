@@ -2,13 +2,13 @@
 
 link_file() {
 	if [[ -f ~/.$1 || -h ~/.$1 ]]; then
-		echo Backing up ~/.$1
+		echo "[*] Backing up ~/.$1"
 
 		cp ~/.$1 ~/.$1.orig
 		rm ~/.$1
 	fi
 
-	echo Creating symlink for $1
+	echo "[*] Creating symlink for $1"
 
 	if [ "$1" = vimrc ]; then
 		dir=vim
@@ -25,28 +25,30 @@ link_file() {
 	ln -s ~/.dotfiles/$dir/$1 ~/.$1 2> /dev/null
 
 	if [ !"$?" = 0 ]; then
-		echo Failed to create symlink for $1
+		echo "[!!] Failed to create symlink for $1"
 	fi
 }
 
 link_dir() {
 	if [ "$1" = openbox ]; then
-		if [[ -f ~/.config/$1 || -h ~/.config/$1 ]]; then
-			echo Backing up ~/.config/$1
+		if [[ -d ~/.config ]]; then
+			if [[ -f ~/.config/$1 || -h ~/.config/$1 ]]; then
+				echo "[*] Backing up ~/.config/$1"
 
-			cp ~/.config/$1 ~/.config/$1.orig
-			rm ~/.config/$1
+				cp ~/.config/$1 ~/.config/$1.orig
+				rm ~/.config/$1
+			fi
 		fi
 	else
 		if [[ -f ~/.$1 || -h ~/.$1 ]]; then
-			echo Backing up ~/.$1
+			echo "[*] Backing up ~/.$1"
 
 			cp ~/.$1 ~/.$1.orig
 			rm ~/.$1
 		fi
 	fi
 
-	echo Creating symlink for $1
+	echo "[*] Creating symlink for $1"
 
 	if [ "$1" = openbox ]; then
 		ln -s ~/.dotfiles/config/$1 ~/.config/$1 2> /dev/null
@@ -55,17 +57,17 @@ link_dir() {
 	fi
 
 	if [ !"$?" = 0 ]; then
-		echo Failed to create symlink for $1
+		echo "[!!] Failed to create symlink for $1"
 	fi
 }
 
 ## make symbolic links
-echo \nStarting installation of dotfiles\n
+echo "\nStarting installation of dotfiles\n"
 
 # oh-my-zsh
 if [ ! -d ~/.oh-my-zsh ]; then
-	echo Installing oh-my-zsh
-	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
+	echo "[*] Installing oh-my-zsh"
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh &> /dev/null
 fi
 
 # vim and vimrc
@@ -98,4 +100,4 @@ link_dir ncmpcpp
 # fonts
 link_dir fonts
 
-echo Finished installing dotfiles
+echo "Finished installing dotfiles"
