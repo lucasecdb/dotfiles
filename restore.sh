@@ -1,24 +1,26 @@
 #!/bin/bash
 
 restore() {
-	echo Looking for backups for $1
+	echo "[?] Looking for backups for $1"
 
 	if [[ -f ~/.$1.orig && -L ~/.$1 ]]; then
-		echo Found backup!
+		echo "[*] Found backup!"
 		rm ~/.$1
 		mv ~/.$1.orig ~/.$1
 	else
-		echo Didn\'t found a backup.. attempting to remove symlink
+		echo "[!] Didn\'t found a backup.. attempting to remove symlink"
 		if [[ -L ~/.$1 ]]; then
-			echo Found symlink!
+			echo "[*] Found symlink!"
 			rm ~/.$1
 		else
-			echo Didn\'t found symlink :\(
+			echo "[!] Didn\'t found symlink :\("
 		fi
 	fi
 }
 
+echo
 echo Starting restoring session!
+echo
 
 # vim and vimrc
 restore  vim
@@ -52,4 +54,4 @@ restore ncmpcpp
 # fonts
 restore fonts
 
-echo Ended restore session, we\'ll miss you
+echo "Ended restore session, we\'ll miss you"
