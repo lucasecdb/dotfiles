@@ -62,7 +62,9 @@ link_dir() {
 }
 
 ## make symbolic links
-echo "\nStarting installation of dotfiles\n"
+echo
+echo "Starting installation of dotfiles"
+echo
 
 # oh-my-zsh
 if [ ! -d ~/.oh-my-zsh ]; then
