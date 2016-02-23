@@ -8,12 +8,12 @@ restore() {
 		rm ~/.$1
 		mv ~/.$1.orig ~/.$1
 	else
-		echo "[!] Didn\'t found a backup.. attempting to remove symlink"
+		echo "[!] Didn't found a backup.. attempting to remove symlink"
 		if [[ -L ~/.$1 ]]; then
 			echo "[*] Found symlink!"
 			rm ~/.$1
 		else
-			echo "[!] Didn\'t found symlink :\("
+			echo "[!] Didn't found symlink :("
 		fi
 	fi
 }
