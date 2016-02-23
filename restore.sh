@@ -35,7 +35,9 @@ restore bashrc
 
 # Xresources
 restore Xresources
-xrdb ~/.Xresources
+if [[ -f ~/.Xresources ]]; then
+	xrdb ~/.Xresources > /dev/null
+fi
 
 # i3
 restore i3
