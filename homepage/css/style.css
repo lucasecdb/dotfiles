@@ -83,14 +83,15 @@ body
 
 .content-wrapper
 {
-	width: 1600px;
+	width: auto;
 	margin: 0 auto;
 }
 
 .content-wrapper > .content-block
 {
 	height: 600px;
-	width: auto;
+	width: 82%;
+	margin: 0 auto;
 	list-style: none;
 }
 
@@ -98,7 +99,7 @@ body
 {
 	display: inline-block;
 	height: 85%;
-	width: 400px;
+	width: 25%;
 	padding-top: 15px;
 	margin: 30px 50px;
 	border: 1px solid lightgrey;
