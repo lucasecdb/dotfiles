@@ -62,9 +62,12 @@ link_dir() {
 ## make symbolic links
 echo \nStarting installation of dotfiles\n
 
+# oh-my-zsh
 if [ !-d ~/.oh-my-zsh ]; then
-	sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+	echo Installing oh-my-zsh
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
 fi
+
 # vim and vimrc
 link_dir  vim
 link_file vimrc
