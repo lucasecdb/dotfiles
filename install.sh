@@ -31,13 +31,15 @@ link_file() {
 
 link_dir() {
 	if [ "$1" = openbox ]; then
-		if [[ -d ~/.config ]]; then
-			if [[ -f ~/.config/$1 || -h ~/.config/$1 ]]; then
-				echo "[*] Backing up ~/.config/$1"
+		if [[ ! -d ~/.config ]]; then
+			mkdir ~/.config
+		fi
 
-				cp ~/.config/$1 ~/.config/$1.orig
-				rm ~/.config/$1
-			fi
+		if [[ -f ~/.config/$1 || -h ~/.config/$1 ]]; then
+			echo "[*] Backing up ~/.config/$1"
+
+			cp ~/.config/$1 ~/.config/$1.orig
+			rm ~/.config/$1
 		fi
 	else
 		if [[ -f ~/.$1 || -h ~/.$1 ]]; then
