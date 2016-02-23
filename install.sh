@@ -63,7 +63,7 @@ link_dir() {
 echo \nStarting installation of dotfiles\n
 
 # oh-my-zsh
-if [ !-d ~/.oh-my-zsh ]; then
+if [ ! -d ~/.oh-my-zsh ]; then
 	echo Installing oh-my-zsh
 	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
 fi
