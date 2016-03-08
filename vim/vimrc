@@ -15,10 +15,10 @@ command Nt NERDTree
 color darcula
 
 " removes functionality of arrow keys
-inoremap <Up>     <NOP>
-inoremap <Down>   <NOP>
-inoremap <Left>   <NOP>
-inoremap <Right>  <NOP>
+"inoremap <Up>     <NOP>
+"inoremap <Down>   <NOP>
+"inoremap <Left>   <NOP>
+"inoremap <Right>  <NOP>
 noremap  <Up>     <NOP>
 noremap  <Down>   <NOP>
 noremap  <Left>   <NOP>
@@ -38,10 +38,12 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_java_checkers = ['javac']
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 " airline setup
 let g:airline_powerline_fonts = 1
 let g:airline_theme='kolor'
+set guifont=Source\ Code\ Pro\ for\ Powerline\ 10
 set laststatus=2
 
 " numbers.vim settings
