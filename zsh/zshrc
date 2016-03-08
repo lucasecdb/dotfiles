@@ -33,3 +33,7 @@ alias py='python'
 alias pyc="rm *.pyc"
 alias clear='echo "ctrl+l"'
 alias cs50="cd ~/Dropbox/CS50/"
+
+function xre() {
+	xrdb ~/.Xresources
+}
