@@ -90,6 +90,7 @@ link_file bashrc
 # Xresources
 link_file Xresources
 xrdb ~/.Xresources
+echo 'xrdb -load ~/.Xresources' >> ~/.xinitrc
 
 # i3
 link_dir i3
