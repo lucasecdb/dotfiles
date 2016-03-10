@@ -8,8 +8,9 @@ set number
 set backspace=indent,eol,start
 syntax on
 
-" alias the NERDTree command to nt
+" command aliases
 command Nt NERDTree
+command W w
 
 " color scheme
 color darcula
