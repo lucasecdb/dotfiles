@@ -11,9 +11,10 @@ syntax on
 " command aliases
 command Nt NERDTree
 command W w
+command Q q
 
 " color scheme
-color darcula
+color adio
 
 " removes functionality of arrow keys
 "inoremap <Up>     <NOP>
