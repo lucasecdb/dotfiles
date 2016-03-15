@@ -14,15 +14,17 @@ body
 .header-wrapper
 {
 	width: 800px;
-	height: 250px;
+	min-height: 100px;
+	height: 200px;
 	margin: 40px auto 0px;
-	padding: 0 auto;
+	padding: 0px auto;
 }
 
 .header-wrapper > .header
 {
-	height: 150px;
+	height: 100px;
 	margin: 0 auto;
+	padding: 15px 40px;
 	text-align: center;
 }
 
@@ -92,6 +94,7 @@ body
 	height: 600px;
 	width: 82%;
 	margin: 0 auto;
+	padding-top: 30px;
 	list-style: none;
 }
 
