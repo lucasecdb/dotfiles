@@ -14,7 +14,7 @@ command W w
 command Q q
 
 " color scheme
-color adio
+color darcula
 
 " removes functionality of arrow keys
 "inoremap <Up>     <NOP>
@@ -27,7 +27,7 @@ noremap  <Left>   <NOP>
 noremap  <Right>  <NOP>
 
 " misc
-set term=xterm-256color
+"set term=xterm-256color
 
 " pathogen
 execute pathogen#infect()
