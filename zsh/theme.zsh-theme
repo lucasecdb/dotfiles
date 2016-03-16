@@ -9,7 +9,7 @@ else
 	dolar='$'
 fi
 
-PROMPT='%{$fg[$color]%}$USER%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%} %2~ $(git_prompt_info)%{$reset_color%}%B$dolar%b '
+PROMPT='%{$fg[$color]%}$USER%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%} %2~ $(git_prompt_info)%{$reset_color%}$dolar '
 RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
