@@ -39,3 +39,7 @@ alias cs50="cd ~/Dropbox/CS50/"
 function xre() {
 	xrdb ~/.Xresources
 }
+
+function gpp() {
+	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
+}
