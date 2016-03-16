@@ -6,10 +6,13 @@ set tabstop=4
 set shiftwidth=4
 set number
 set backspace=indent,eol,start
+set noesckeys
 syntax on
 
-" alias the NERDTree command to nt
+" command aliases
 command Nt NERDTree
+command W w
+command Q q
 
 " color scheme
 color darcula
@@ -25,7 +28,7 @@ noremap  <Left>   <NOP>
 noremap  <Right>  <NOP>
 
 " misc
-set term=xterm-256color
+"set term=xterm-256color
 
 " pathogen
 execute pathogen#infect()

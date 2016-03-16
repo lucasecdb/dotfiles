@@ -1,5 +1,6 @@
 # swp files
 *.swp
+*~
 
 # log and pid files (mpd files)
 *.log

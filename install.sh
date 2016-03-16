@@ -89,7 +89,11 @@ link_file bashrc
 
 # Xresources
 link_file Xresources
-xrdb ~/.Xresources
+
+if [[ `uname` = 'Linux' ]]; then
+	xrdb ~/.Xresources
+	echo 'xrdb -load ~/.Xresources' >> ~/.xinitrc
+fi
 
 # i3
 link_dir i3

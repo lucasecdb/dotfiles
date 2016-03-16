@@ -30,10 +30,12 @@ export PATH=$PATH:/home/$USER/.dotfiles/bin
 ##   ALIASES   ##
 #################
 
-alias grep='grep --colour=auto'
-alias la='ls -A --group-directories-first'
-alias ll='ls -Al --group-directories-first'
-alias ls='ls --color=auto --group-directories-first'
+if [[ `uname` = Linux ]]; then
+	alias grep='grep --colour=auto'
+	alias la='ls -A --group-directories-first'
+	alias ll='ls -Al --group-directories-first'
+	alias ls='ls --color=auto --group-directories-first'
+fi
 alias py='python'
 alias clear='echo "ctrl+l"'
 
