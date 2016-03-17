@@ -6,7 +6,7 @@ app.controller("social_media", ["$scope", function ($scope) {
 		},
 		{
 			"name": "Reddit",
-			"link": "www.reddit.com"
+			"link": "https://www.reddit.com"
 		},
 		{
 			"name": "Youtube",
