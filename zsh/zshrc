@@ -44,4 +44,8 @@ function gpp() {
 	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
 }
 
+function css() {
+	scss $1.scss $1.css
+}
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
