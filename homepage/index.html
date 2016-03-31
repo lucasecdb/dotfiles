@@ -27,32 +27,32 @@
 		</div>
 		<!-- websites -->
 		<div class="content-wrapper">
-			<ul class="content-block">
-				<li class="content" ng-controller="social_media">
+			<div class="content-block">
+				<div class="content" ng-controller="social_media">
 					<div class="content-img">
 						<span class="fa fa-twitter"></span>
 					</div>
 					<ul class="content-list">
 						<li class="content-website" ng-repeat="web in sites"><a ng-href="{{web.link}}" target="_blank"><span ng-bind="web.name"></span></a></li>
 					</ul>
-				</li>
-				<li class="content" ng-controller="code">
+				</div>
+				<div class="content" ng-controller="code">
 					<div class="content-img">
 						<span class="fa fa-android"></span>
 					</div>
 					<ul class="content-list">
 						<li class="content-website" ng-repeat="web in sites"><a ng-href="{{web.link}}" target="_blank"><span ng-bind="web.name"></span></a></li>
 					</ul>
-				</li>
-				<li class="content" ng-controller="linux">
+				</div>
+				<div class="content" ng-controller="linux">
 					<div class="content-img">
 						<span class="fa fa-linux"></span>
 					</div>
 					<ul class="content-list">
 						<li class="content-website" ng-repeat="web in sites"><a ng-href="{{web.link}}" target="_blank"><span ng-bind="web.name"></span></a></li>
 					</ul>
-				</li>
-			</ul>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
