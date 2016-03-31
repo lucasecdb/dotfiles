@@ -17,7 +17,7 @@ body, html {
 	padding: 0px auto;
 }
 
-.header-wrapper > .header {
+.header-wrapper > h1 {
 	height: 100px;
 	margin: 0 auto;
 	padding: 15px 40px;
