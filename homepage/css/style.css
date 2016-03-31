@@ -91,20 +91,20 @@ body
 
 .content-wrapper > .content-block
 {
+	display: block;
 	height: 600px;
-	width: 82%;
+	width: 1111px;
 	margin: 0 auto;
-	padding-top: 30px;
-	list-style: none;
+	padding: 0;
 }
 
 .content-wrapper > .content-block > .content
 {
 	display: inline-block;
-	height: 85%;
-	width: 25%;
+	height: 400px;
+	width: 350px;
 	padding-top: 15px;
-	margin: 30px 3.5%;
+	margin: 30px 10px;
 	border: 1px solid lightgrey;
 	border-radius: 7px;
 	vertical-align: top;
