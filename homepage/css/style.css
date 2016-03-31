@@ -2,17 +2,15 @@
 {
 	box-sizing: border-box;
 	margin: 0;
-	font-family: Roboto, Cantarell, Arial;
+	font-family: Roboto, Cantarell, Arial, sans-serif;
 	color: #888;
 }
 
-body
-{
-	background-color: #ffffff;
+body, html {
+	height: 100%;
 }
 
-.header-wrapper
-{
+.header-wrapper {
 	width: 800px;
 	min-height: 100px;
 	height: 200px;
@@ -20,22 +18,19 @@ body
 	padding: 0px auto;
 }
 
-.header-wrapper > .header
-{
+.header-wrapper > .header {
 	height: 100px;
 	margin: 0 auto;
 	padding: 15px 40px;
 	text-align: center;
 }
 
-.header-wrapper > form
-{
+.header-wrapper > form {
 	height: 100px;
 	text-align: center;
 }
 
-.header-wrapper > form > .text
-{
+.header-wrapper > form > .text {
 	border: 1px solid lightgrey;
 	border-radius: 0px;
 	width: 400px;
@@ -44,18 +39,15 @@ body
 	color: #222222;
 }
 
-.header-wrapper > form > .text:hover
-{
+.header-wrapper > form > .text:hover {
 	border: 1px solid #757575;
 }
 
-.header-wrapper > form > .text:focus
-{
+.header-wrapper > form > .text:focus {
 	border: 1px solid #0099ff;
 }
 
-.header-wrapper > form > .btn
-{
+.header-wrapper > form > .btn {
 	background-color: #f0f0f0;
 	border: 1px solid #f0f0f0;
 	border-radius: 0px;
@@ -64,98 +56,112 @@ body
 	color: #757575;
 }
 
-.header-wrapper > form > .btn:hover
-{
+.header-wrapper > form > .btn:hover {
 	border: 1px solid lightgrey;
 	color: #000;
 }
 
-.header-wrapper > form > .btn > .fa-search
-{
+.header-wrapper > form > .btn > .fa-search {
 	font-size: 0.9em;
 }
 
-.light-bar
-{
+.line-bar {
 	height: 1px;
 	width: 90%;
 	margin: 0 auto;
 	background-color: lightgrey;
 }
 
-.content-wrapper
-{
-	width: auto;
-	margin: 0 auto;
-}
-
-.content-wrapper > .content-block
-{
+.content-block {
 	display: block;
 	height: 600px;
-	width: 1111px;
+	width: 1200px;
 	margin: 0 auto;
 	padding: 0;
 }
 
-.content-wrapper > .content-block > .content
-{
+.content-block > .content {
 	display: inline-block;
 	height: 400px;
 	width: 350px;
 	padding-top: 15px;
-	margin: 30px 10px;
+	margin: 30px 23.6px;
 	border: 1px solid lightgrey;
 	border-radius: 7px;
 	vertical-align: top;
 }
 
-.content-wrapper > .content-block > .content > .content-img
-{
+.content-block > .content > .content-img {
 	text-align: center;
-	/*width: 100px;
-	margin: 0 auto;*/
 	font-size: 6em;
 }
 
 /* twitter */
-.content-wrapper > .content-block > .content:first-child:hover > .content-img > .fa
-{
+.content-block > .content:first-child:hover > .content-img > .fa {
 	color: #00aced;
 }
 
 /* android */
-.content-wrapper > .content-block > .content:nth-child(2):hover > .content-img > .fa
-{
+.content-block > .content:nth-child(2):hover > .content-img > .fa {
 	color: #A4C639;
 }
 
 /* linux */
-.content-wrapper > .content-block > .content:last-child:hover > .content-img > .fa
-{
+.content-block > .content:last-child:hover > .content-img > .fa {
 	color: black;
 }
 
-.content-wrapper > .content-block > .content > .content-list
-{
+.content-block > .content > .content-list {
 	width: 80%;
 	margin: 30px auto 0;
 	padding: 0;
 	list-style: none;
 }
 
-.content-wrapper > .content-block > .content > .content-list > .content-website
-{
+.content-block > .content > .content-list > .content-website {
 	margin: 15px 0;
 }
 
-.content-wrapper > .content-block > .content > .content-list > .content-website > a
-{
+.content-block > .content > .content-list > .content-website > a {
 	font-size: 18px;
+	line-height: 1.2em;
 	text-decoration: none;
 }
 
-.content-wrapper > .content-block > .content > .content-list > .content-website > a:hover
-{
+.content-block > .content > .content-list > .content-website > a:hover {
 	color: black;
+}
+
+@media screen and (max-width: 1300px) and (min-width: 980px) {
+	.content-block {
+		width: 900px;
+	}
+
+	.content-block > .content {
+		width: 250px;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.header-wrapper {
+		width: 500px;
+	}
+
+	.header-wrapper > form > .text {
+		width: 300px;
+	}
+
+	.content-block {
+		width: 500px;
+	}
+
+	.content-block > .content {
+		width: 400px;
+		display: block;
+		margin: 30px auto;
+	}
+
+	.content-block > .content > .content-list > .content-website > a {
+		font-size: 1.3em;
+	}
 }
