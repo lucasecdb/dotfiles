@@ -17,19 +17,19 @@ body, html {
 	padding: 0px auto;
 }
 
-.header-wrapper > h1 {
+.header-wrapper h1 {
 	height: 100px;
 	margin: 0 auto;
 	padding: 15px 40px;
 	text-align: center;
 }
 
-.header-wrapper > form {
+.header-wrapper form {
 	height: 100px;
 	text-align: center;
 }
 
-.header-wrapper > form > .text {
+.header-wrapper form .text {
 	border: 1px solid lightgrey;
 	border-radius: 0px;
 	width: 400px;
@@ -38,15 +38,15 @@ body, html {
 	color: #222222;
 }
 
-.header-wrapper > form > .text:hover {
+.header-wrapper form .text:hover {
 	border: 1px solid #757575;
 }
 
-.header-wrapper > form > .text:focus {
+.header-wrapper form .text:focus {
 	border: 1px solid #0099ff;
 }
 
-.header-wrapper > form > .btn {
+.header-wrapper form .btn {
 	background-color: #f0f0f0;
 	border: 1px solid #f0f0f0;
 	border-radius: 0px;
@@ -55,12 +55,12 @@ body, html {
 	color: #757575;
 }
 
-.header-wrapper > form > .btn:hover {
+.header-wrapper form .btn:hover {
 	border: 1px solid lightgrey;
 	color: #000;
 }
 
-.header-wrapper > form > .btn > .fa-search {
+.header-wrapper form .btn .fa-search {
 	font-size: 0.9em;
 }
 
