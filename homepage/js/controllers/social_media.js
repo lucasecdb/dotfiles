@@ -20,9 +20,5 @@ app.controller("social_media", ["$scope", function ($scope) {
 			"name": "Facebook",
 			"link": "https://www.facebook.com"
 		},
-		{
-			"name": "Habitica",
-			"link": "https://habitica.com/#/tasks"
-		}
 	];
 }]);
