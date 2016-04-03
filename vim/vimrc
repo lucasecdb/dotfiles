@@ -15,7 +15,7 @@ command W w
 command Q q
 
 " color scheme
-color darcula
+color sourcerer
 
 " removes functionality of arrow keys
 "inoremap <Up>     <NOP>
