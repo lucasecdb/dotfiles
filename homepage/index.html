@@ -24,10 +24,12 @@
 				<button class="btn" type="submit"/>Search <span class="fa fa-search"></span></button>
 			</form>
 		</div>
-		<div class="line-bar">
-		</div>
+
+		<div class="line-bar"></div>
+
 		<!-- websites -->
 		<div class="content-block">
+			
 			<div class="content" ng-controller="social_media">
 				<div class="content-img">
 					<span class="fa fa-twitter"></span>
@@ -36,6 +38,7 @@
 					<li class="content-website" ng-repeat="web in sites"><a ng-href="{{web.link}}" target="_blank"><span ng-bind="web.name"></span></a></li>
 				</ul>
 			</div>
+			
 			<div class="content" ng-controller="code">
 				<div class="content-img">
 					<span class="fa fa-android"></span>
@@ -44,6 +47,7 @@
 					<li class="content-website" ng-repeat="web in sites"><a ng-href="{{web.link}}" target="_blank"><span ng-bind="web.name"></span></a></li>
 				</ul>
 			</div>
+			
 			<div class="content" ng-controller="linux">
 				<div class="content-img">
 					<span class="fa fa-linux"></span>
@@ -52,6 +56,7 @@
 					<li class="content-website" ng-repeat="web in sites"><a ng-href="{{web.link}}" target="_blank"><span ng-bind="web.name"></span></a></li>
 				</ul>
 			</div>
+			
 		</div>
 	</body>
 </html>
