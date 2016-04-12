@@ -19,23 +19,16 @@ fi
 #    . /usr/share/powerline/bash/powerline.sh
 #fi
 
-# initialize bash with tmux
-#if command -v tmux>/dev/null; then
-#	  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-#fi
-
 export PATH=$PATH:/home/$USER/.dotfiles/bin
 
 #################
 ##   ALIASES   ##
 #################
 
-if [[ `uname` = Linux ]]; then
-	alias grep='grep --colour=auto'
-	alias la='ls -A --group-directories-first'
-	alias ll='ls -Al --group-directories-first'
-	alias ls='ls --color=auto --group-directories-first'
-fi
+alias grep='grep --colour=auto'
+alias la='ls -A --group-directories-first'
+alias ll='ls -Ahl --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
 alias py='python'
 alias clear='echo "ctrl+l"'
 
