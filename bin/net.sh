@@ -5,8 +5,8 @@ usage() {
 }
 
 net_service() {
-	service networking $1 2> /dev/null
-	service network-manager $1 2> /dev/null
+	service networking $1 &> /dev/null
+	service network-manager $1 &> /dev/null
 }
 
 if [[ "$1" = start || "$1" = up ]]; then
