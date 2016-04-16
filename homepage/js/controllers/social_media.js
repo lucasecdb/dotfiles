@@ -13,6 +13,10 @@ app.controller("social_media", ["$scope", function ($scope) {
 			"link": "https://www.youtube.com"
 		},
 		{
+			"name": "Whatsapp Web",
+			"link": "https://web.whatsapp.com"
+		},
+		{
 			"name": "Gmail",
 			"link": "https://gmail.com"
 		},
