@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 icon="$HOME/.dotfiles/img/lock_icon.png"
 tmpbg='/tmp/screen.png'
