@@ -108,4 +108,7 @@ link_dir ncmpcpp
 # fonts
 link_dir fonts
 
+# themes
+link_dir themes
+
 echo "Finished installing dotfiles"
