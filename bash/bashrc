@@ -20,7 +20,7 @@ fi
 #fi
 
 export PATH=$PATH:/home/$USER/.dotfiles/bin
-export PS1='\e[34m\u\e[39m@\e[32m\H \e[39m\W \$ '
+export PS1='${debian_chroot:+($debian_chroot)}\e[34m\u\e[39m@\e[32m\H \e[39m\W \$ '
 
 #################
 ##   ALIASES   ##
