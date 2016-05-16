@@ -17,18 +17,12 @@ command Q q
 " color scheme
 colorscheme mirodark
 
-" removes functionality of arrow keys
-"inoremap <Up>     <NOP>
-"inoremap <Down>   <NOP>
-"inoremap <Left>   <NOP>
-"inoremap <Right>  <NOP>
-noremap  <Up>     <NOP>
-noremap  <Down>   <NOP>
-noremap  <Left>   <NOP>
-noremap  <Right>  <NOP>
+" key mappings
+inoremap <c-u> <esc>viwUi
+nnoremap <c-u> viwU
 
 " misc
-"set term=xterm-256color
+set term=xterm-256color
 
 " pathogen
 execute pathogen#infect()
