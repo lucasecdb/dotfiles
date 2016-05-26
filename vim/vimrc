@@ -15,7 +15,7 @@ command W w
 command Q q
 
 " color scheme
-colorscheme mirodark
+colorscheme predawn
 
 " key mappings
 inoremap <c-u> <esc>viwUi
