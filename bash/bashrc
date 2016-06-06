@@ -20,7 +20,7 @@ fi
 #fi
 
 export PATH=$PATH:/home/$USER/.dotfiles/bin
-export PS1='${debian_chroot:+($debian_chroot)}\e[34m\u\e[39m@\e[32m\h \e[39m\W \$ '
+export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 7)\]\W \\$ \[$(tput sgr0)\]"
 
 #################
 ##   ALIASES   ##
@@ -68,5 +68,5 @@ webserver() {
     echo 'all ready :-)';
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TERM=xterm-256color
