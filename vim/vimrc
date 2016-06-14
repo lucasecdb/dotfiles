@@ -23,6 +23,7 @@ nnoremap <c-u> viwU
 
 " misc
 set term=xterm-256color
+set nocompatible
 
 " pathogen
 execute pathogen#infect()
