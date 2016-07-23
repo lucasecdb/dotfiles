@@ -1,5 +1,5 @@
 # environment variables and source files
-export PATH=$PATH:$HOME/.dotfiles/bin:$HOME/.android-studio/bin
+export PATH=$PATH:$HOME/.dotfiles/bin:$HOME/.android-studio/bin:$HOME/.rvm/bin:$HOME/.tst
 
 export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
 export GIT_EDITOR=vim
@@ -24,7 +24,6 @@ compinit
 # End of lines added by compinstall
 
 # Custom alias
-#alias open='gnome-open'
 alias grep='grep --colour=auto'
 alias la='ls -A --group-directories-first'
 alias ll='ls -Ahl --group-directories-first'
@@ -33,17 +32,8 @@ alias py='python'
 alias pyc="rm *.pyc"
 alias cs50="cd ~/Dropbox/CS50/"
 
-function xre() {
-	xrdb ~/.Xresources
-}
-
 function gpp() {
 	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
 }
 
-function css() {
-	scss $1.scss $1.css
-}
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export TERM=xterm-256color

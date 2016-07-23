@@ -1,7 +1,5 @@
 #############################################
 ##         BASH RUN COMMANDS FILE          ##
-##           LUCAS CORDEIRO (C)            ##
-##                 2015                    ##
 #############################################
 
 if [ -f /etc/bashrc ]; then
@@ -12,15 +10,12 @@ if [[ -f ~/.bashrc.orig && ! -L ~/.bashrc.orig ]]; then
 	. ~/.bashrc.orig
 fi
 
-#if [ -f `which powerline-daemon` ]; then
-#    powerline-daemon -q
-#    POWERLINE_BASH_CONTINUATION=1
-#    POWERLINE_BASH_SELECT=1
-#    . /usr/share/powerline/bash/powerline.sh
-#fi
+source ~/.dotfiles/bash/git-prompt.sh
 
-export PATH=$PATH:/home/$USER/.dotfiles/bin
-export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 7)\]\W \\$ \[$(tput sgr0)\]"
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+export PATH=$PATH:/home/$USER/.dotfiles/bin:/home/$USER/.rvm/bin:/home/$USER/.tst
+export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \W\[$(tput sgr0)\]\[$(tput setaf 3)\]\$(__git_ps1 ' (%s)') \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 #################
 ##   ALIASES   ##
@@ -53,20 +48,4 @@ gpp() {
 	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
 }
 
-sdl() {
-    echo "g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -lSDL2 -o $1";
-    g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -lSDL2 -o $1;
-}
-
-webserver() {
-    echo 'Starting apache webserver';
-    sudo service httpd start;
-    echo 'Starting MySQL database';
-    sudo service mariadb start;
-
-    echo '';
-    echo 'all ready :-)';
-}
-
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TERM=xterm-256color

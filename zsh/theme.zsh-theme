@@ -1,7 +1,7 @@
 # ZSH theme based on Oh My Zsh gallifrey one
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-if [ $USER = root ]; then
+if [ $(id -u $USER) = 0 ]; then
 	color=red
 	dolar='#'
 else
