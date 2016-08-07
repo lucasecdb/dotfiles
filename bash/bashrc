@@ -14,7 +14,7 @@ source ~/.dotfiles/bash/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-export PATH=$PATH:/home/$USER/.dotfiles/bin:/home/$USER/.rvm/bin:/home/$USER/.tst
+export PATH=$PATH:/home/$USER/.dotfiles/bin:/home/$USER/.rvm/bin:/home/$USER/.tst:$HOME/.config/composer/vendor/bin
 export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \W\[$(tput sgr0)\]\[$(tput setaf 3)\]\$(__git_ps1 ' (%s)') \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 #################
@@ -26,7 +26,6 @@ alias la='ls -A --group-directories-first'
 alias ll='ls -Ahl --group-directories-first'
 alias ls='ls --color=auto --group-directories-first'
 alias py='python'
-alias clear='echo "ctrl+l"'
 
 # Compilers and stuff
 alias cmpl=cmpl

@@ -10,17 +10,7 @@ link_file() {
 
 	echo "[*] Creating symlink for $1"
 
-	if [ "$1" = vimrc ]; then
-		dir=vim
-	elif [ "$1" = bashrc ]; then
-		dir=bash
-	elif [ "$1" = zshrc ]; then
-		dir=zsh
-	elif [ "$1" = tmux.conf -o "$1" = tmux ]; then
-		dir=tmux
-	else
-		dir=.
-	fi
+	dir=$2
 
 	ln -s ~/.dotfiles/$dir/$1 ~/.$1 2> /dev/null
 
@@ -76,16 +66,19 @@ fi
 
 # vim and vimrc
 link_dir  vim
-link_file vimrc
+link_file vimrc vim
+
+# emacs
+link_file emacs emacs
 
 # tmux.conf
-link_file tmux.conf
+link_file tmux.conf tmux
 
 # zshrc
-link_file zshrc
+link_file zshrc zsh
 
 # bashrc
-link_file bashrc
+link_file bashrc bash
 
 # Xresources
 link_file Xresources
