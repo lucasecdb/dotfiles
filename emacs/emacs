@@ -15,6 +15,7 @@
  '(custom-safe-themes
    (quote
     ("7dad2be7d806486305d7d3afe6b53a0c882cf651e183ed1ffe6dfb0745dc80f6" default)))
+ '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
  '(package-archives
    (quote
@@ -33,3 +34,5 @@
 (setq default-tab-width 4)
 
 (global-linum-mode t)
+
+(require 'linum-relative)
