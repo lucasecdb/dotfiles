@@ -22,7 +22,7 @@ inoremap <c-u> <esc>viwUi
 nnoremap <c-u> viwU
 
 " misc
-set term=xterm-256color
+" set term=xterm-256color
 set nocompatible
 
 " pathogen
