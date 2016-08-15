@@ -32,3 +32,5 @@
 xterm*font:     *-fixed-*-*-*-18-*
 *faceName: Source Code Pro for Powerline
 *faceSize: 11
+
+URxvt*scrollBar: false

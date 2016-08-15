@@ -17,7 +17,8 @@ command W w
 command Q q
 
 " color scheme
-colorscheme predawn
+colorscheme gruvbox
+set background=dark
 
 " key mappings
 inoremap <c-u> <esc>viwUi
