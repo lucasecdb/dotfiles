@@ -23,6 +23,7 @@ set background=dark
 " key mappings
 inoremap <c-u> <esc>viwUi
 nnoremap <c-u> viwU
+nnoremap <c-n> :Nt<cr><c-w><c-w>
 
 " misc
 " set term=xterm-256color
