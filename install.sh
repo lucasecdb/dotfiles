@@ -78,7 +78,6 @@ link_dir  vim
 link_file vim/vimrc vimrc
 
 # emacs
-link_file emacs.d/emacs emacs
 link_dir emacs.d
 
 # tmux.conf
