@@ -1,21 +1,30 @@
 #!/bin/bash
 
 link_file() {
-	if [[ -f ~/.$1 || -h ~/.$1 ]]; then
-		echo "[*] Backing up ~/.$1"
+    if [[ $1 = "" ]]; then
+        echo "Invalid arguments"
+    fi
 
-		cp ~/.$1 ~/.$1.orig
-		rm ~/.$1
+    file=$1
+    dest=$2
+
+    if [[ $2 = "" ]]; then
+        dest=$1
+    fi
+
+	if [[ -f ~/.$dest || -h ~/.$dest ]]; then
+		echo "[*] Backing up ~/.$dest"
+
+		cp ~/.$dest ~/.$dest.orig 2> /dev/null
+		rm ~/.$dest
 	fi
 
-	echo "[*] Creating symlink for $1"
+	echo "[*] Creating symlink for $dest"
 
-	dir=$2
-
-	ln -s ~/.dotfiles/$dir/$1 ~/.$1 2> /dev/null
+	ln -s ~/.dotfiles/$file ~/.$dest 2> /dev/null
 
 	if [ !"$?" = 0 ]; then
-		echo "[!!] Failed to create symlink for $1"
+		echo "[!!] Failed to create symlink for $dest"
 	fi
 }
 
@@ -28,14 +37,14 @@ link_dir() {
 		if [[ -f ~/.config/$1 || -h ~/.config/$1 ]]; then
 			echo "[*] Backing up ~/.config/$1"
 
-			cp ~/.config/$1 ~/.config/$1.orig
+			cp ~/.config/$1 ~/.config/$1.orig 2> /dev/null
 			rm ~/.config/$1
 		fi
 	else
 		if [[ -f ~/.$1 || -h ~/.$1 ]]; then
 			echo "[*] Backing up ~/.$1"
 
-			cp ~/.$1 ~/.$1.orig
+			cp ~/.$1 ~/.$1.orig 2> /dev/null
 			rm ~/.$1
 		fi
 	fi
@@ -66,19 +75,20 @@ fi
 
 # vim and vimrc
 link_dir  vim
-link_file vimrc vim
+link_file vim/vimrc vimrc
 
 # emacs
-link_file emacs emacs
+link_file emacs.d/emacs emacs
+link_dir emacs.d
 
 # tmux.conf
-link_file tmux.conf tmux
+link_file tmux/tmux.conf tmux.conf
 
 # zshrc
-link_file zshrc zsh
+link_file zsh/zshrc zshrc
 
 # bashrc
-link_file bashrc bash
+link_file bash/bashrc bashrc
 
 # Xresources
 link_file Xresources
@@ -104,4 +114,5 @@ link_dir fonts
 # themes
 link_dir themes
 
+echo
 echo "Finished installing dotfiles"
