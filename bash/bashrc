@@ -15,7 +15,7 @@ source ~/.dotfiles/bash/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_EDITOR=vim
 
-export PATH=$PATH:/home/$USER/.dotfiles/bin:/home/$USER/.rvm/bin:/home/$USER/.tst:$HOME/.config/composer/vendor/bin
+export PATH=$PATH:$HOME/.dotfiles/bin:$HOME/.rvm/bin:$HOME/.tst:$HOME/.config/composer/vendor/bin:$HOME/bin
 export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \W\[$(tput sgr0)\]\[$(tput setaf 3)\]\$(__git_ps1 ' (%s)') \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 #################
