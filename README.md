@@ -17,5 +17,6 @@ $ sudo pacman -S zsh
 $
 $ # install dotfiles
 $ git clone https://github.com/lucasecdb/dotfiles.git ~/.dotfiles
+$ git submodule init && git submodule update --recursive
 $ ~/.dotfiles/install.sh
 ```
