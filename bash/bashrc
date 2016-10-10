@@ -49,3 +49,5 @@ gpp() {
 }
 
 export TERM=screen-256color
+
+export GOPATH=$HOME/.gocode
