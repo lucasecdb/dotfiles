@@ -50,5 +50,5 @@ gpp() {
 
 export TERM=screen-256color
 export GOPATH=$HOME/.gocode
-export ANDROID_HOME=$HOME/Library/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
