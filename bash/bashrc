@@ -31,8 +31,6 @@ alias py='python'
 # Compilers and stuff
 alias cmpl=cmpl
 alias gpp=gpp
-alias server=webserver
-alias sdl=sdl
 
 # CS50
 alias cs50="cd ~/Dropbox/CS50/"
@@ -48,6 +46,9 @@ gpp() {
 	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
 }
 
-export TERM=screen-256color
+# Custom env variables
 
+export TERM=screen-256color
 export GOPATH=$HOME/.gocode
+export ANDROID_HOME=$HOME/Library/sdk
+
