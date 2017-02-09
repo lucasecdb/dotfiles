@@ -1,53 +1,58 @@
 #!/bin/bash
 
-link() {
-  if [[ -f ~/.$1 || -h ~/.$1 ]]; then
-    echo "[*] Backing up ~/.$1"
-
-    cp ~/.$1 ~/.$1.orig 2> /dev/null
-    rm ~/.$1
+link_home() {
+  if [[ ! -d ~/`dirname $2` ]]; then
+    mkdir -p "~/$(dirname $2)"
   fi
 
-  echo "[*] Creating symlink for $1"
+  if [[ -f ~/$2 || -h ~/$2 ]]; then
+    echo "[*] Backing up ~/$2"
 
-  ln -s ~/.dotfiles/$1 ~/.$1 2> /dev/null
+    cp ~/$2 ~/$2.orig 2> /dev/null
+    rm ~/$2
+  fi
+
+  echo "[*] Creating symlink_home for $2"
+
+  ln -s ~/.dotfiles/$1 ~/$2 2> /dev/null
 
   if [ !"$?" = 0 ]; then
-    echo "[!!] Failed to create symlink for $1"
+    echo "[!!] Failed to create symlink_home for $2"
   fi
 }
 
-## make symbolic links
+## make symbolic link_homes
 echo
 echo "Starting installation of dotfiles"
 echo
 
 # oh-my-zsh
 if [ ! -d ~/.oh-my-zsh ]; then
-        echo "[*] Installing oh-my-zsh"
-        git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh &> /dev/null
+  echo "[*] Installing oh-my-zsh"
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh &> /dev/null
 fi
 
 # vim and vimrc
-link vim
-link vim/init.vim vimrc
+link_home vim          .vim
+link_home vim/init.vim .vimrc
+link_home vim/init.vim .config/nvim/init.vim
 
 # emacs
-link emacs.d
+link_home emacs.d .emacs.d
 
 # tmux.conf
-link tmux/tmux.conf tmux.conf
+link_home tmux/tmux.conf .tmux.conf
 
 # zshrc
-link zsh/zshrc zshrc
+link_home zsh/zshrc .zshrc
 
 # bashrc
-link bash/bashrc bashrc
-link bash/bashrc bash_profile
+link_home bash/bashrc .bashrc
+link_home bash/bashrc .bash_profile
 
 
 # Xresources
-link Xresources
+link_home Xresources .Xresources
 
 if [[ `uname` = 'Linux' ]]; then
         xrdb ~/.Xresources
@@ -55,10 +60,10 @@ if [[ `uname` = 'Linux' ]]; then
 fi
 
 # fonts
-link fonts
+link_home fonts .fonts
 
 # themes
-link themes
+link_home themes .themes
 
 echo
 echo "Finished installing dotfiles"
