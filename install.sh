@@ -12,7 +12,7 @@ link_home() {
     rm ~/$2
   fi
 
-  echo "[*] Creating symlink_home for $2"
+  echo "[*] Creating symlink for $2"
 
   ln -s ~/.dotfiles/$1 ~/$2 2> /dev/null
 
