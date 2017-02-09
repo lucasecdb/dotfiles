@@ -35,7 +35,9 @@ fi
 # vim and vimrc
 link_home vim          .vim
 link_home vim/init.vim .vimrc
-link_home vim/init.vim .config/nvim/init.vim
+
+# nvim
+link_home vim .config/nvim
 
 # emacs
 link_home emacs.d .emacs.d
