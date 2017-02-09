@@ -2,7 +2,7 @@
 
 link_home() {
   if [[ ! -d ~/`dirname $2` ]]; then
-    mkdir -p "~/$(dirname $2)"
+    mkdir -p ~/$(dirname $2)
   fi
 
   if [[ -f ~/$2 || -h ~/$2 ]]; then
