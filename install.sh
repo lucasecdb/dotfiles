@@ -39,9 +39,6 @@ link_home vim/init.vim .vimrc
 # nvim
 link_home vim .config/nvim
 
-# emacs
-link_home emacs.d .emacs.d
-
 # tmux.conf
 link_home tmux/tmux.conf .tmux.conf
 
@@ -51,7 +48,6 @@ link_home zsh/zshrc .zshrc
 # bashrc
 link_home bash/bashrc .bashrc
 link_home bash/bashrc .bash_profile
-
 
 # Xresources
 link_home Xresources .Xresources
