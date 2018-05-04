@@ -3,11 +3,11 @@
 #############################################
 
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+        . /etc/bashrc
 fi
 
 if [[ -f ~/.bashrc.orig && ! -L ~/.bashrc.orig ]]; then
-	. ~/.bashrc.orig
+        . ~/.bashrc.orig
 fi
 
 source ~/.dotfiles/bash/git-prompt.sh
@@ -27,29 +27,16 @@ alias la='ls -A'
 alias ll='ls -Ahl'
 alias ls='ls -G --color=always'
 alias py='python'
-
-# Compilers and stuff
-alias cmpl=cmpl
-alias gpp=gpp
-
-# CS50
-alias cs50="cd ~/Dropbox/CS50/"
-
-# custom functions
-cmpl() {
-    echo "gcc -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lm -o $1";
-    gcc -ggdb -std=c99 -Wall -Werror ${1}.c -lcrypt -lm -o $1;
-}
-
-gpp() {
-	echo "g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1";
-	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
-}
+alias vim='nvim'
 
 # Custom env variables
 
-export TERM=screen-256color
+export TERM=xterm-256color-italic
 export GOPATH=$HOME/.gocode
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:`yarn global bin`
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/Library/Python/3.6/bin:$HOME/.tst/bin
+
+if which yarn &> /dev/null; then
+  export PATH=$PATH:`yarn global bin`
+fi
 
