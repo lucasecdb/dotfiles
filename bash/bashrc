@@ -1,7 +1,3 @@
-#############################################
-##         BASH RUN COMMANDS FILE          ##
-#############################################
-
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
@@ -10,23 +6,26 @@ if [[ -f ~/.bashrc.orig && ! -L ~/.bashrc.orig ]]; then
   . ~/.bashrc.orig
 fi
 
+# Section: Git {{{1
+
 source ~/.dotfiles/bash/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_EDITOR=vim
 
-export PATH=$PATH:$HOME/.dotfiles/bin:$HOME/.rvm/bin:$HOME/.tst:$HOME/.config/composer/vendor/bin:$HOME/bin
-export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \W\[$(tput sgr0)\]\[$(tput setaf 3)\]\$(__git_ps1 ' (%s)') \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+if which nvim &> /dev/null; then
+  export GIT_EDITOR=nvim
+else
+  export GIT_EDITOR=vim
+fi
 
-#################
-##   ALIASES   ##
-#################
+# }}}1
+# Section: Aliases {{{1
 
 alias grep='grep --colour=auto'
 alias la='ls -A'
 alias ll='ls -Ahl'
 
-if [[ `uname` = 'linux' ]]; then
+if [[ `uname` = 'Linux' ]]; then
   alias ls='ls -G --color=always'
 else
   alias ls='ls -G'
@@ -34,14 +33,33 @@ fi
 
 alias vim='nvim'
 
-# Custom env variables
+# }}}1
+# Section: Env {{{1
 
-export TERM=xterm-256color-italic
-export GOPATH=$HOME/.gocode
+export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \W\[$(tput sgr0)\]\[$(tput setaf 3)\]\$(__git_ps1 ' (%s)') \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/Library/Python/3.6/bin:$HOME/.tst/bin
+export PATH=$PATH:\
+$HOME/.dotfiles/bin:\
+$HOME/.rvm/bin:\
+$HOME/.config/composer/vendor/bin:\
+$HOME/bin:\
+$ANDROID_HOME/tools:\
+$ANDROID_HOME/platform-tools:\
+$HOME/Library/Python/3.6/bin:\
+$HOME/.tst/bin
+
+if [[ `uname` = 'Darwin' ]]; then
+  export TERM=xterm-256color-italic
+else
+  export TERM=xterm-256color
+fi
+
+export GOPATH=$HOME/.gocode
 
 if which yarn &> /dev/null; then
   export PATH=$PATH:`yarn global bin`
 fi
+
+# }}}1
 
