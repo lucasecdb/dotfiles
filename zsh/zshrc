@@ -51,13 +51,19 @@ if which yarn &> /dev/null; then
 fi
 
 export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
+
 # }}}1
 # Section: Aliases {{{1
+
+if [[ `uname` = 'Linux' ]]; then
+  alias ls='ls --color=auto --group-directories-first'
+fi
+
 alias grep='grep --colour=auto'
-alias la='ls -A --group-directories-first'
-alias ll='ls -Ahl --group-directories-first'
-alias ls='ls --color=auto --group-directories-first'
+alias la='ls -A'
+alias ll='ls -Ahl'
 alias py='python'
 alias pyc="rm *.pyc"
+
 # }}}1
 
