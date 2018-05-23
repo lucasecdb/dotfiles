@@ -1,41 +1,63 @@
-# environment variables and source files
-export PATH=$PATH:$HOME/.dotfiles/bin:$HOME/.android-studio/bin:$HOME/.rvm/bin:$HOME/.tst
-
-export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
-export GIT_EDITOR=vim
-
-# oh-my-zsh rc file and theme file
 source $HOME/.dotfiles/zsh/zshrc.aux
 source $HOME/.dotfiles/zsh/theme.zsh-theme
 
-# Lines configured by zsh-newuser-install
+# Section: Git {{{1
+
+if which nvim &> /dev/null; then
+  export GIT_EDITOR=nvim
+else
+  export GIT_EDITOR=vim
+fi
+
+# }}}1
+# Section: Auto Config {{{1
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt beep nomatch notify autocd
 unsetopt appendhistory extendedglob share_history
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
 zstyle :compinstall filename '/home/lucas/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-# Custom alias
+# }}}1
+# Section: Env {{{1
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:\
+$HOME/.dotfiles/bin:\
+$HOME/.rvm/bin:\
+$HOME/.config/composer/vendor/bin:\
+$HOME/bin:\
+$ANDROID_HOME/tools:\
+$ANDROID_HOME/platform-tools:\
+$HOME/Library/Python/3.6/bin:\
+$HOME/.tst/bin
+
+if [[ `uname` = 'Darwin' ]]; then
+  export TERM=xterm-256color-italic
+else
+  export TERM=xterm-256color
+fi
+
+export GOPATH=$HOME/.gocode
+
+if which yarn &> /dev/null; then
+  export PATH=$PATH:`yarn global bin`
+fi
+
+export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
+# }}}1
+# Section: Aliases {{{1
 alias grep='grep --colour=auto'
 alias la='ls -A --group-directories-first'
 alias ll='ls -Ahl --group-directories-first'
 alias ls='ls --color=auto --group-directories-first'
 alias py='python'
 alias pyc="rm *.pyc"
-alias cs50="cd ~/Dropbox/CS50/"
+# }}}1
 
-function gpp() {
-	g++ -ggdb -std=c++11 -Wall -Werror ${1}.cpp -lcrypt -lm -o $1;
-}
-
-export TERM=xterm-256color
-
-export GOPATH=$HOME/.gocode
