@@ -67,3 +67,5 @@ alias pyc="rm *.pyc"
 
 # }}}1
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
