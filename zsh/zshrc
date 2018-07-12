@@ -1,3 +1,7 @@
+if [[ -f $HOME/.profile ]]; then
+  source $HOME/.profile
+fi
+
 source $HOME/.dotfiles/zsh/zshrc.aux
 source $HOME/.dotfiles/zsh/theme.zsh-theme
 
@@ -65,5 +69,8 @@ alias ll='ls -Ahl'
 alias py='python'
 alias pyc="rm *.pyc"
 
+# }}}1
+# Section: Config {{{1
+bindkey '^R' history-incremental-search-backward
 # }}}1
 
