@@ -6,6 +6,8 @@ if [[ -f ~/.bashrc.orig && ! -L ~/.bashrc.orig ]]; then
   . ~/.bashrc.orig
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Section: Git {{{1
 
 source ~/.dotfiles/bash/git-prompt.sh
@@ -60,6 +62,8 @@ export GOPATH=$HOME/.gocode
 if which yarn &> /dev/null; then
   export PATH=$PATH:`yarn global bin`
 fi
+
+export FZF_DEFAULT_OPTS='-i'
 
 # }}}1
 

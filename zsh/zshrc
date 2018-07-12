@@ -5,6 +5,8 @@ fi
 source $HOME/.dotfiles/zsh/zshrc.aux
 source $HOME/.dotfiles/zsh/theme.zsh-theme
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Section: Git {{{1
 
 if which nvim &> /dev/null; then
@@ -55,6 +57,8 @@ if which yarn &> /dev/null; then
 fi
 
 export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
+
+export FZF_DEFAULT_OPTS='-i'
 
 # }}}1
 # Section: Aliases {{{1
