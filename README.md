@@ -1,22 +1,13 @@
 # dotfiles
 
-Pretty self explanatory, just my dotfiles I use for my WM and daily applications.
+Pretty self explanatory, just my dotfiles I use for my daily applications.
 
 ## Installing
 
-To install my dotfiles in a Linux machine just type these commands on a terminal
+To install in a Unix-like machine just run the bellow
 
-```shell
-$ # install zsh
-$ # for ubuntu
-$ sudo apt-get install zsh
-$ # for fedora and similar
-$ sudo dnf install zsh
-$ # for arch
-$ sudo pacman -S zsh
-$
-$ # install dotfiles
-$ git clone https://github.com/lucasecdb/dotfiles.git ~/.dotfiles
-$ git submodule update --init --recursive
-$ ~/.dotfiles/install.sh
+```bash
+git clone https://github.com/lucasecdb/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles && git submodule update --init --recursive
+./install.sh
 ```
