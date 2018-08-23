@@ -15,7 +15,7 @@ if [ -f '/Users/lucas/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lucas/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lucas/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
-source <(kubectl completion bash)
+which kubectl &> /dev/null && source <(kubectl completion bash)
 
 export NVM_DIR="$HOME/.nvm"
 
