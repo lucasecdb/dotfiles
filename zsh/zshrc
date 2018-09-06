@@ -80,6 +80,8 @@ export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/li
 
 export FZF_DEFAULT_OPTS='-i'
 
+export SHELL=`which zsh`
+
 # }}}1
 # Section: Aliases {{{1
 
