@@ -33,7 +33,6 @@ link_home bash/bashrc .bash_profile
 link_home Xresources .Xresources
 
 if [[ `uname` = 'Linux' ]]; then
-        xrdb ~/.Xresources
-        echo 'xrdb -load ~/.Xresources' >> ~/.xinitrc
+  xrdb ~/.Xresources
+  echo 'xrdb -load ~/.Xresources' >> ~/.xinitrc
 fi
-
