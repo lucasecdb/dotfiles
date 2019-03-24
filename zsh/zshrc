@@ -21,7 +21,11 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/zsh/theme.zsh-theme
 
 if which kubectl &> /dev/null; then
-  source <(kubectl completion zsh);
+  source <(kubectl completion zsh)
+fi
+
+if which helm &> /dev/null; then
+  source <(helm completion zsh)
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
