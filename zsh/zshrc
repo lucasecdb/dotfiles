@@ -24,10 +24,6 @@ if which kubectl &> /dev/null; then
   source <(kubectl completion zsh)
 fi
 
-if which helm &> /dev/null; then
-  source <(helm completion zsh)
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"

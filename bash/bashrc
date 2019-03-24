@@ -19,7 +19,6 @@ if [ -f '/Users/lucas/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '
 if [ -f '/Users/lucas/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lucas/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 which kubectl &> /dev/null && source <(kubectl completion bash)
-which helm &> /dev/null && source <(helm completion bash)
 
 # }}}1
 # Section: Git {{{1
