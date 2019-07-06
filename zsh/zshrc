@@ -57,6 +57,8 @@ compinit
 # }}}1
 # Section: Env {{{1
 
+export LC_ALL=en_US.UTF-8
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:\
 $HOME/.dotfiles/bin:\
@@ -105,3 +107,7 @@ alias pyc="rm *.pyc"
 bindkey '^R' history-incremental-search-backward
 
 # }}}1
+
+# Wasmer
+export WASMER_DIR="/Users/lucas/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
