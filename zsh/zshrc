@@ -103,6 +103,13 @@ alias pyc="rm *.pyc"
 
 alias jtags="ctags -R app config lib && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
+if which hub &> /dev/null; then
+  alias git='hub'
+fi
+
+# why?
+unalias rg
+
 # }}}1
 # Section: Config {{{1
 
