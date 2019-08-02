@@ -120,3 +120,5 @@ bindkey '^R' history-incremental-search-backward
 # Wasmer
 export WASMER_DIR="/Users/lucas/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
