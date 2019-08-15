@@ -68,7 +68,8 @@ $HOME/bin:\
 $ANDROID_HOME/tools:\
 $ANDROID_HOME/platform-tools:\
 $HOME/Library/Python/3.6/bin:\
-$HOME/.tst/bin
+$HOME/.tst/bin:\
+/Library/TeX/texbin
 
 if [[ `uname` = 'Darwin' ]]; then
   export TERM=xterm-256color-italic
@@ -87,6 +88,12 @@ export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/li
 export FZF_DEFAULT_OPTS='-i'
 
 export SHELL=`which zsh`
+
+# Wasmer
+export WASMER_DIR="$HOME/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # }}}1
 # Section: Aliases {{{1
@@ -116,9 +123,3 @@ unalias rg
 bindkey '^R' history-incremental-search-backward
 
 # }}}1
-
-# Wasmer
-export WASMER_DIR="/Users/lucas/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
