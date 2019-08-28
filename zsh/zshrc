@@ -60,8 +60,7 @@ compinit
 export LC_ALL=en_US.UTF-8
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:\
-$HOME/.dotfiles/bin:\
+export PATH=$HOME/.dotfiles/bin:\
 $HOME/.rvm/bin:\
 $HOME/.config/composer/vendor/bin:\
 $HOME/bin:\
@@ -69,7 +68,8 @@ $ANDROID_HOME/tools:\
 $ANDROID_HOME/platform-tools:\
 $HOME/Library/Python/3.6/bin:\
 $HOME/.tst/bin:\
-/Library/TeX/texbin
+/Library/TeX/texbin:\
+$PATH
 
 if [[ `uname` = 'Darwin' ]]; then
   export TERM=xterm-256color-italic

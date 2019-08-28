@@ -61,15 +61,15 @@ export LC_ALL=en_US.UTF-8
 export PS1="\[$(tput setaf 4)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput setaf 7)\] \W\[$(tput sgr0)\]\[$(tput setaf 3)\]\$(__git_ps1 ' (%s)') \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:\
-$HOME/.dotfiles/bin:\
+export PATH=$HOME/.dotfiles/bin:\
 $HOME/.rvm/bin:\
 $HOME/.config/composer/vendor/bin:\
 $HOME/bin:\
 $ANDROID_HOME/tools:\
 $ANDROID_HOME/platform-tools:\
 $HOME/Library/Python/3.6/bin:\
-$HOME/.tst/bin
+$HOME/.tst/bin:\
+$PATH
 
 if [[ `uname` = 'Darwin' ]]; then
   export TERM=xterm-256color-italic
