@@ -47,7 +47,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt beep nomatch notify autocd
 unsetopt appendhistory extendedglob share_history
-bindkey -v
 
 zstyle :compinstall filename "$HOME/.zshrc"
 
