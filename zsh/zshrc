@@ -82,7 +82,9 @@ if which yarn &> /dev/null; then
   export PATH=$PATH:`yarn global bin`
 fi
 
-export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
+if which pkg-config &> /dev/null; then
+  export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
+fi
 
 export FZF_DEFAULT_OPTS='-i'
 
