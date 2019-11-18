@@ -58,6 +58,8 @@ compinit
 
 export LC_ALL=en_US.UTF-8
 
+export GOPATH=$HOME/.gocode
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$HOME/.dotfiles/bin:\
 $HOME/.rvm/bin:\
@@ -67,7 +69,9 @@ $ANDROID_HOME/tools:\
 $ANDROID_HOME/platform-tools:\
 $HOME/Library/Python/3.6/bin:\
 $HOME/.tst/bin:\
+$HOME/.cargo/bin:\
 /Library/TeX/texbin:\
+$GOPATH/bin:\
 $PATH
 
 if [[ `uname` = 'Darwin' ]]; then
@@ -75,8 +79,6 @@ if [[ `uname` = 'Darwin' ]]; then
 else
   export TERM=xterm-256color
 fi
-
-export GOPATH=$HOME/.gocode
 
 if which yarn &> /dev/null; then
   export PATH=$PATH:`yarn global bin`
