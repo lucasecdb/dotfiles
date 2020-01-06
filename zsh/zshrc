@@ -74,11 +74,7 @@ $HOME/.cargo/bin:\
 $GOPATH/bin:\
 $PATH
 
-if [[ `uname` = 'Darwin' ]]; then
-  export TERM=xterm-256color-italic
-else
-  export TERM=xterm-256color
-fi
+export TERM=xterm-256color
 
 if which yarn &> /dev/null; then
   export PATH=$PATH:`yarn global bin`
@@ -116,9 +112,6 @@ alias jtags="ctags -R app config lib && sed -i '' -E '/^(if|switch|function|modu
 if which hub &> /dev/null; then
   alias git='hub'
 fi
-
-# why?
-unalias rg
 
 # }}}1
 # Section: Config {{{1
