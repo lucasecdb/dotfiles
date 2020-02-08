@@ -30,9 +30,3 @@ link_home tmux/tmux.conf .tmux.conf
 link_home zsh/zshrc .zshrc
 link_home bash/bashrc .bashrc
 link_home bash/bashrc .bash_profile
-link_home Xresources .Xresources
-
-if [[ `uname` = 'Linux' ]]; then
-  xrdb ~/.Xresources
-  echo 'xrdb -load ~/.Xresources' >> ~/.xinitrc
-fi
