@@ -1,32 +1,64 @@
-#!/bin/bash
+#!/usr/bin/env python3
 
-link_home() {
-  if [[ ! -d ~/`dirname $2` ]]; then
-    mkdir -p ~/$(dirname $2)
-  fi
+from pathlib import Path
+import os
 
-  if [[ -f ~/$2 || -h ~/$2 ]]; then
-    echo "[*] Backing up ~/$2"
-
-    cp ~/$2 ~/$2.orig 2> /dev/null
-    rm ~/$2
-  fi
-
-  echo "[*] Creating symlink for $2"
-
-  ln -s ~/.dotfiles/$1 ~/$2 2> /dev/null
-
-  if [ !"$?" = 0 ]; then
-    echo "[!!] Failed to create symlink_home for $2"
-  fi
+LOG_LEVEL_MAP = {
+    'normal': '',
+    'info': '\033[92m',
+    'error': '\033[91m',
+    'clear': '\033[0m',
 }
 
-if [ ! -d ~/.oh-my-zsh ]; then
-  echo "[*] Installing oh-my-zsh"
-  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh &> /dev/null
-fi
+def log(message, level='normal'):
+    print(f'{LOG_LEVEL_MAP[level]}{message}{LOG_LEVEL_MAP["clear"]}')
 
-link_home tmux/tmux.conf .tmux.conf
-link_home zsh/zshrc .zshrc
-link_home bash/bashrc .bashrc
-link_home bash/bashrc .bash_profile
+def clone_repo(repo_url, target):
+    pid = os.fork()
+
+    if pid == 0:
+        os.execvp('git', ('git', 'clone', repo_url, target))
+        os.exit()
+    else:
+        os.wait()
+
+def link_home(source, target):
+    current_directory = Path.cwd()
+
+    source_path = current_directory / source
+    target_path = Path.home() / target
+
+    if target_path.is_symlink():
+        log(f'Skipping {target}')
+        return
+
+    if target_path.exists():
+        log(f'Backing up {target_path}')
+
+        target_path.replace(target_path.with_suffix('.orig'))
+
+    try:
+        log(f'> Creating symlink for {target_path}')
+
+        target_path.symlink_to(source_path)
+    except:
+        log(f'Failed to create symlink for {target_path}', level='error')
+
+def main():
+    log('Installing dotfiles...\n', level='info')
+
+    if not (Path.home() / '.oh-my-zsh').is_dir():
+        print("> Installing oh-my-zsh")
+
+        try:
+            clone_repo('https://github.com/robbyrussell/oh-my-zsh.git', str(Path('~/.oh-my-zsh').expanduser()))
+        except:
+            log('Failed to install oh-my-zsh', level='error')
+
+    link_home('tmux/tmux.conf', '.tmux.conf')
+    link_home('zsh/zshrc', '.zshrc')
+    link_home('bash/bashrc', '.bashrc')
+    link_home('bash/bashrc', '.bash_profile')
+
+if __name__ == '__main__':
+    main()
