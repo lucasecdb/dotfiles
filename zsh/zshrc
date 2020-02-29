@@ -84,6 +84,10 @@ if which pkg-config &> /dev/null; then
   export PKG_CONFIG_PATH=$(pkg-config --variable pc_path pkg-config):/usr/local/lib/pkgconfig/
 fi
 
+if which python3 &> /dev/null; then
+  PATH=`python3 -c 'import site; print(site.USER_BASE)'`/bin:$PATH
+fi
+
 export FZF_DEFAULT_OPTS='-i'
 
 export SHELL=`which zsh`
