@@ -93,6 +93,8 @@ export FZF_DEFAULT_OPTS='-i'
 
 export SHELL=`which zsh`
 
+export KUBE_EDITOR=$GIT_EDITOR
+
 # Wasmer
 export WASMER_DIR="$HOME/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
