@@ -1,0 +1,7 @@
+# vim: ft=gitconfig
+# This is Git's per-user configuration file.
+[user]
+	name = Lucas Cordeiro
+	email = ecdb.lucas@gmail.com
+[pull]
+	rebase = true

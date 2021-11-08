@@ -36,7 +36,6 @@ def link_home(source, target):
         log(f'Backing up {target_path}')
 
         target_path.replace(target_path.with_suffix('.orig'))
-
     try:
         log(f'> Creating symlink for {target_path}')
 
@@ -59,6 +58,7 @@ def main():
     link_home('zsh/zshrc', '.zshrc')
     link_home('bash/bashrc', '.bashrc')
     link_home('bash/bashrc', '.bash_profile')
+    link_home('git/gitconfig', '.gitconfig')
 
 if __name__ == '__main__':
     main()
