@@ -116,6 +116,10 @@ alias jtags="ctags -R app config lib && sed -i '' -E '/^(if|switch|function|modu
 
 alias k='kubectl'
 
+if which podman &> /dev/null; then
+  alias docker=podman
+fi
+
 # }}}1
 # Section: Config {{{1
 

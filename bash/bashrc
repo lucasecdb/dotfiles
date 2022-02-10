@@ -49,6 +49,10 @@ fi
 alias vim='nvim'
 alias jtags="ctags -R app config lib && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
+if which podman &> /dev/null; then
+  alias docker=podman
+fi
+
 # }}}1
 # Section: Env {{{1
 
