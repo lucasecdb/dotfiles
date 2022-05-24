@@ -90,3 +90,12 @@ export FZF_DEFAULT_OPTS='-i'
 export KUBE_EDITOR=$GIT_EDITOR
 
 # }}}1
+# Section: Misc {{{1
+if [[ uname = 'Darwin' ]]; then
+  # Disable mouse acceleration
+  defaults write .GlobalPreferences com.apple.mouse.scaling -1
+
+  # Enable key holding for repeat text
+  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+fi
+# }}}1
