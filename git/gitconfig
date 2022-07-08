@@ -7,7 +7,7 @@
 	rebase = true
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/env gh auth git-credential
+	helper = !/usr/local/bin/gh auth git-credential
 [init]
 	defaultBranch = main
 [filter "lfs"]
@@ -15,3 +15,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+[core]
+	excludesfile = ~/.gitignore

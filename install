@@ -59,6 +59,8 @@ def main():
     link_home('bash/bashrc', '.bashrc')
     link_home('bash/bashrc', '.bash_profile')
     link_home('git/gitconfig', '.gitconfig')
+    link_home('git/gitconfig', '.gitignore')
+    link_home('git/gitignore', '.gitignore')
 
 if __name__ == '__main__':
     main()
