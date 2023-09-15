@@ -5,68 +5,74 @@ import os
 import sys
 
 LOG_LEVEL_MAP = {
-  'normal': '',
-  'info': '\033[92m',
-  'error': '\033[91m',
-  'clear': '\033[0m',
+    'normal': '',
+    'info': '\033[92m',
+    'error': '\033[91m',
+    'clear': '\033[0m',
 }
 
+
 def log(message, level='normal'):
-  print(f'{LOG_LEVEL_MAP[level]}{message}{LOG_LEVEL_MAP["clear"]}')
+    print(f'{LOG_LEVEL_MAP[level]}{message}{LOG_LEVEL_MAP["clear"]}')
+
 
 def clone_repo(repo_url, target):
-  pid = os.fork()
+    pid = os.fork()
 
-  if pid == 0:
-    os.execvp('git', ('git', 'clone', repo_url, target))
-    os.exit()
-  else:
-    os.wait()
+    if pid == 0:
+        os.execvp('git', ('git', 'clone', repo_url, target))
+        os.exit()
+    else:
+        os.wait()
+
 
 def link_home(source, target):
-  current_directory = Path.cwd()
+    current_directory = Path.cwd()
 
-  source_path = current_directory / source
-  target_path = Path.home() / target
+    source_path = current_directory / source
+    target_path = Path.home() / target
 
-  if target_path.is_symlink():
-    log(f'Skipping {target}')
+    if target_path.is_symlink():
+        log(f'Skipping {target}')
 
-    return
+        return
 
-  if target_path.exists():
-    if '--force' in sys.argv:
-      log(f'Force flag used, overwriting {target_path}')
+    if target_path.exists():
+        if '--force' in sys.argv:
+            log(f'Force flag used, overwriting {target_path}')
 
-      target_path.unlink()
-    else:
-      log(f'Backing up {target_path}')
+            target_path.unlink()
+        else:
+            log(f'Backing up {target_path}')
 
-      target_path.replace(target_path.with_suffix('.orig'))
-  try:
-    log(f'> Creating symlink for {target_path}')
+            target_path.replace(target_path.with_suffix('.orig'))
+    try:
+        log(f'> Creating symlink for {target_path}')
 
-    target_path.symlink_to(source_path)
-  except:
-    log(f'Failed to create symlink for {target_path}', level='error')
+        target_path.symlink_to(source_path)
+    except Exception:
+        log(f'Failed to create symlink for {target_path}', level='error')
+
 
 def main():
-  log('Installing dotfiles...\n', level='info')
+    log('Installing dotfiles...\n', level='info')
 
-  if not (Path.home() / '.oh-my-zsh').is_dir():
-    print("> Installing oh-my-zsh")
+    if not (Path.home() / '.oh-my-zsh').is_dir():
+        print("> Installing oh-my-zsh")
 
-    try:
-      clone_repo('https://github.com/robbyrussell/oh-my-zsh.git', str(Path('~/.oh-my-zsh').expanduser()))
-    except:
-      log('Failed to install oh-my-zsh', level='error')
+        try:
+            clone_repo('https://github.com/robbyrussell/oh-my-zsh.git',
+                       str(Path('~/.oh-my-zsh').expanduser()))
+        except Exception:
+            log('Failed to install oh-my-zsh', level='error')
 
-  link_home('tmux/tmux.conf', '.tmux.conf')
-  link_home('zsh/zshrc', '.zshrc')
-  link_home('bash/bashrc', '.bashrc')
-  link_home('bash/bashrc', '.bash_profile')
-  link_home('git/gitconfig', '.gitconfig')
-  link_home('git/gitignore', '.gitignore')
+    link_home('tmux/tmux.conf', '.tmux.conf')
+    link_home('zsh/zshrc', '.zshrc')
+    link_home('bash/bashrc', '.bashrc')
+    link_home('bash/bashrc', '.bash_profile')
+    link_home('git/gitconfig', '.gitconfig')
+    link_home('git/gitignore', '.gitignore')
+
 
 if __name__ == '__main__':
-  main()
+    main()
