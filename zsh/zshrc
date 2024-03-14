@@ -32,15 +32,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # }}}1
-# Section: Git {{{1
-
-if which nvim &> /dev/null; then
-  export GIT_EDITOR=nvim
-else
-  export GIT_EDITOR=vim
-fi
-
-# }}}1
 # Section: Auto Config {{{1
 
 HISTFILE=~/.histfile
@@ -56,6 +47,14 @@ compinit
 
 # }}}1
 # Section: Env {{{1
+
+if which nvim &> /dev/null; then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
+
+export GIT_EDITOR=$EDITOR
 
 export LC_ALL=en_US.UTF-8
 
