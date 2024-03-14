@@ -73,6 +73,7 @@ $HOME/.cargo/bin:\
 /Library/TeX/texbin:\
 $GOPATH/bin:\
 ~/.rd/bin:\
+/snap/bin:\
 $PATH
 
 export TERM=xterm-256color
