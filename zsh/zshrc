@@ -9,7 +9,7 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 
 DISABLE_AUTO_UPDATE="true"
-plugins=(git rails)
+plugins=(git zsh-autosuggestions history-substring-search nvm)
 
 export PATH=$PATH:/usr/local/bin/:$HOME/bin
 
@@ -25,11 +25,6 @@ if which kubectl &> /dev/null; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NVM_DIR="$HOME/.nvm"
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # }}}1
 # Section: Auto Config {{{1
