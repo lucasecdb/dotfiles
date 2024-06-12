@@ -71,6 +71,7 @@ $HOME/Library/Python/3.6/bin:\
 $HOME/.tst/bin:\
 $HOME/.cargo/bin:\
 $GOPATH/bin:\
+$HOME/.rd/bin:\
 $PATH
 
 if [[ `uname` = 'Darwin' ]]; then
