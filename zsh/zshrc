@@ -13,6 +13,8 @@ plugins=(git zsh-autosuggestions history-substring-search nvm)
 
 export PATH=$PATH:/usr/local/bin/:$HOME/bin
 
+[[ -s "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # }}}1
@@ -69,6 +71,7 @@ $HOME/.cargo/bin:\
 $GOPATH/bin:\
 ~/.rd/bin:\
 /snap/bin:\
+~/Library/pnpm:\
 $PATH
 
 export TERM=xterm-256color
@@ -131,3 +134,8 @@ if [[ uname = 'Darwin' ]]; then
   defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 fi
 # }}}1
+
+# This must be at the end of the file for sdkman to work
+export SDKMAN_DIR="$HOME/.sdkman"
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
