@@ -5,6 +5,8 @@
 	email = ecdb.lucas@gmail.com
 [pull]
 	rebase = true
+[push]
+  autoSetupRemote = true
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 [init]
