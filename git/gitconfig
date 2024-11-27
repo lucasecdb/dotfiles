@@ -7,6 +7,9 @@
 	rebase = true
 [push]
   autoSetupRemote = true
+[fetch]
+  prune = true
+  pruneTags = true
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 [init]
