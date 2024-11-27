@@ -71,6 +71,7 @@ $HOME/.cargo/bin:\
 $GOPATH/bin:\
 ~/.rd/bin:\
 /snap/bin:\
+~/.local/bin:\
 $PATH
 
 export TERM=xterm-256color
