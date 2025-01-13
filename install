@@ -70,6 +70,7 @@ def main():
     link_home('zsh/zshrc', '.zshrc')
     link_home('git/gitconfig', '.gitconfig')
     link_home('git/gitignore', '.gitignore')
+    link_home('ghostty/config', '.config/ghostty/config')
 
 
 if __name__ == '__main__':
