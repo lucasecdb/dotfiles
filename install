@@ -66,6 +66,15 @@ def main():
         except Exception:
             log('Failed to install oh-my-zsh', level='error')
 
+    if not (Path.home() / '.tmux' / 'plugins' / 'tpm').is_dir():
+        print("> Installing tmux plugin manager (tpm)")
+
+        try:
+            clone_repo('https://github.com/tmux-plugins/tpm.git',
+                       str(Path('~/.tmux/plugins/tpm').expanduser()))
+        except Exception:
+            log('Failed to install tpm', level='error')
+
     link_home('tmux/tmux.conf', '.tmux.conf')
     link_home('zsh/zshrc', '.zshrc')
     link_home('git/gitconfig', '.gitconfig')
