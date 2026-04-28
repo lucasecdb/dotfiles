@@ -25,3 +25,5 @@
 	excludesfile = ~/.gitignore
 [includeIf "gitdir:~/gyg/"]
   path = ~/gyg/.gitconfig
+[url "https://github.com/"]
+  insteadOf = "git@github.com:"
