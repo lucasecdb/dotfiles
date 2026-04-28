@@ -63,6 +63,12 @@ def main():
         try:
             clone_repo('https://github.com/robbyrussell/oh-my-zsh.git',
                        str(Path('~/.oh-my-zsh').expanduser()))
+
+            zsh_custom = Path(os.environ.get('ZSH_CUSTOM', str(Path.home() / '.oh-my-zsh' / 'custom')))
+            autosuggestions_dir = zsh_custom / 'plugins' / 'zsh-autosuggestions'
+
+            clone_repo('https://github.com/zsh-users/zsh-autosuggestions',
+                       str(autosuggestions_dir))
         except Exception:
             log('Failed to install oh-my-zsh', level='error')
 
